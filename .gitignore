@@ -43,12 +43,11 @@ Temporary Items
 .apdisk
 
 
-GGJ2015-csharp.sln
-GGJ2015.sln
+
 Temp/
 [Oo]bj/
 [Bb]uild/
-[Ll]ibrary/
+[Ll]ibrary
 sysinfo.txt
 [Ee]xported[Oo]bj/
 /*.userprefs
@@ -59,3 +58,6 @@ sysinfo.txt
 /*.user
 /*.unityproj
 /*.booproj
+GGJ2015-csharp.sln
+GGJ2015.sln
+Library/CurrentLayout.dwlt
