@@ -14,7 +14,12 @@ public class PushLiftCollider : MonoBehaviour {
 	void Update () {
 	
 	}
-	
+
+	public Transform getTarget() {
+		return target;
+	}
+
+
 	void OnTriggerEnter2D(Collider2D other) {
 		Debug.Log ("Entering "+other.transform);
 		if(other.transform.tag == "Interactable"){
