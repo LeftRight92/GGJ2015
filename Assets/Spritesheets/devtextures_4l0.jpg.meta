@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: f55ebb1cb825f2d40affbdf8957a7ea3
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: devtextures_4l0_0
+    21300002: devtextures_4l0_1
+    21300004: devtextures_4l0_2
+    21300006: devtextures_4l0_3
+    21300008: devtextures_4l0_4
+    21300010: devtextures_4l0_5
+    21300012: devtextures_4l0_6
+    21300014: devtextures_4l0_7
+    21300016: devtextures_4l0_8
+    21300018: devtextures_4l0_9
+    21300020: devtextures_4l0_10
+    21300022: devtextures_4l0_11
+    21300024: devtextures_4l0_12
+    21300026: devtextures_4l0_13
+    21300028: devtextures_4l0_14
+    21300030: devtextures_4l0_15
+    21300032: devtextures_4l0_16
+    21300034: devtextures_4l0_17
+    21300036: devtextures_4l0_18
+    21300038: devtextures_4l0_19
+    21300040: devtextures_4l0_20
+    21300042: devtextures_4l0_21
+    21300044: devtextures_4l0_22
+    21300046: devtextures_4l0_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: devtextures_4l0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_2
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_3
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_4
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_5
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_6
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_7
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 91
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_9
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 91
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_10
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 91
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_11
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 91
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_12
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 91
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_13
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 91
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_14
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 91
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_15
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 91
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_17
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 2
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_18
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 2
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_19
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 2
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_20
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 2
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_21
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 2
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_22
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 2
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: devtextures_4l0_23
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
