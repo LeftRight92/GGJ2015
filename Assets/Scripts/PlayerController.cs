@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5.0f;
 	private Animator animator;
 	public AudioClip[] walkingSounds;
+	private AudioSource footstep;
 	public bool rightFacing = true;
 
 	// Use this for initialization
 	void Start () {
 		animator = transform.GetComponentInChildren<Animator>();
+		footstep = transform.GetComponentInChildren<AudioSource>();
 		InvokeRepeating("WalkingSound",0,0.35f);
 	}
 	
@@ -59,11 +61,8 @@ public class PlayerController : MonoBehaviour {
 	void WalkingSound(){
 			if(animator.GetBool ("Walking")){
 				int file = Random.Range (0, walkingSounds.GetLength(0));
-				Debug.Log (file);
-				audio.clip = walkingSounds[file];
-				Debug.Log(audio.clip);
-				audio.Play ();
-			Debug.Log ("Is Playing: " + audio.isPlaying);
+				footstep.clip = walkingSounds[file];
+				footstep.Play ();
 			}
 	}
 }
