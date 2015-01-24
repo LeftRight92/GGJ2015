@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.32999992, y: 0, z: 0}
+  m_LocalPosition: {x: -6.71000004, y: -2.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 422686}
@@ -155,6 +155,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb24b38b3540e445b0d3bf35519ae9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushed:
+  - {fileID: 8300000, guid: 87b916e0172515f49b348d03565fc09f, type: 3}
+  - {fileID: 8300000, guid: 4dcce336ad2333d46bebd0055118dc94, type: 3}
+  - {fileID: 8300000, guid: b1050eb2bcfe8244f9a6d49b78a5b727, type: 3}
+  - {fileID: 8300000, guid: c6ed0f99d5ecf8443a7a7e20679f9f0e, type: 3}
+  - {fileID: 8300000, guid: 79ced11a9862abd429a8223d844a7a5c, type: 3}
+  - {fileID: 8300000, guid: 3959155288e58b24dbafa6c4b19cf7c4, type: 3}
+  - {fileID: 8300000, guid: 85a8637d1f997bc42a73dd6958d436ad, type: 3}
+  lifted:
+  - {fileID: 8300000, guid: 9d9c7a6442b464c41bcfc177255bee2d, type: 3}
+  - {fileID: 8300000, guid: 00380bd8279957a498e25e46b8d633ed, type: 3}
+  - {fileID: 8300000, guid: ebfa90d879ab83a4ab3b31945b1022f1, type: 3}
+  - {fileID: 8300000, guid: 19050cdbbd41de643986849170d4f0f7, type: 3}
+  - {fileID: 8300000, guid: d944070277fcbdd488509ab93758daaf, type: 3}
+  idle: []
+  satan: []
+  hurt:
+  - {fileID: 8300000, guid: 2220026b337694b4bbe5d40d61f75da2, type: 3}
+  - {fileID: 8300000, guid: 54ecb4ad9765ae24592d9c65c016e26c, type: 3}
+  - {fileID: 8300000, guid: f2feb5a9e6457ed4d95f2342f8c31932, type: 3}
 --- !u!212 &21222684
 SpriteRenderer:
   m_ObjectHideFlags: 1

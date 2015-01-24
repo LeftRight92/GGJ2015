@@ -5,6 +5,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 
 	private Animator kidAnimator;
 	private Animator catAnimator;
+	public AudioClip[] pushed, lifted, idle, satan, hurt;
 	// Use this for initialization
 	void Start () {
 		kidAnimator = transform.GetComponentInChildren<Animator>();
@@ -16,6 +17,8 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	}
 	
 	public bool onPush(bool facing){
+		audio.clip = pushed[Random.Range (0,pushed.GetLength (0))];
+		audio.Play ();
 		return true;
 	}
 
@@ -26,7 +29,12 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		catAnimator = GameController.Get ("Cat").GetComponent<Animator> ();
 		player.canControl = false;
 		kidAnimator.SetTrigger ("Reach");
+		audio.clip = lifted[Random.Range (0,lifted.GetLength (0))];
+		audio.Play ();
+		yield return new WaitForSeconds(1);
 		catAnimator.SetBool ("isScratching", true);
+		audio.clip = hurt[Random.Range (0,hurt.GetLength (0))];
+		audio.Play ();
 		//Animations
 		yield return new WaitForSeconds(2);
 		kidAnimator.SetTrigger ("Scratched");
