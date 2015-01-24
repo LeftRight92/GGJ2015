@@ -1,28 +1,28 @@
 <?xml version="1.0" standalone="no" ?>
 <!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
-<project xmlns="http://audacity.sourceforge.net/xml/" projname="police_car_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="2.4355960516" vpos="0" h="0.0000000000" zoom="321.8924581006" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds">
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="police_car_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="321.8924581006" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds">
 	<tags/>
 	<wavetrack name="police_1" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
-		<waveclip offset="0.00000000">
-			<sequence maxsamples="262144" sampleformat="262159" numsamples="240576">
+		<waveclip offset="0.02485261">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="108369">
 				<waveblock start="0">
-					<simpleblockfile filename="e0000517.au" len="240576" min="-0.994507" max="0.991394" rms="0.197881"/>
+					<simpleblockfile filename="e0000dc8.au" len="108369" min="-0.994507" max="0.991394" rms="0.27752"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="0"/>
 		</waveclip>
 	</wavetrack>
 	<wavetrack name="police_1" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
-		<waveclip offset="0.00000000">
-			<sequence maxsamples="262144" sampleformat="262159" numsamples="240576">
+		<waveclip offset="0.02485261">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="108369">
 				<waveblock start="0">
-					<simpleblockfile filename="e000051e.au" len="240576" min="-0.994537" max="0.991425" rms="0.197881"/>
+					<simpleblockfile filename="e000011b.au" len="108369" min="-0.994537" max="0.991425" rms="0.27752"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="0"/>
 		</waveclip>
 	</wavetrack>
-	<wavetrack name="police_car_loop" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+	<wavetrack name="police_car_loop" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
 		<waveclip offset="0.00000000">
 			<sequence maxsamples="262144" sampleformat="262159" numsamples="18752">
 				<waveblock start="0">
@@ -64,15 +64,15 @@
 			<envelope numpoints="0"/>
 		</waveclip>
 		<waveclip offset="2.12607710">
-			<sequence maxsamples="262144" sampleformat="262159" numsamples="18752">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="15705">
 				<waveblock start="0">
-					<simpleblockfile filename="e0000178.au" len="18752" min="-0.452698" max="0.494781" rms="0.068392"/>
+					<simpleblockfile filename="e0000aa3.au" len="15705" min="-0.452698" max="0.454071" rms="0.062136"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="0"/>
 		</waveclip>
 	</wavetrack>
-	<wavetrack name="police_car_loop" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+	<wavetrack name="police_car_loop" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
 		<waveclip offset="0.00000000">
 			<sequence maxsamples="262144" sampleformat="262159" numsamples="18752">
 				<waveblock start="0">
@@ -114,9 +114,9 @@
 			<envelope numpoints="0"/>
 		</waveclip>
 		<waveclip offset="2.12607710">
-			<sequence maxsamples="262144" sampleformat="262159" numsamples="18752">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="15705">
 				<waveblock start="0">
-					<simpleblockfile filename="e00003d8.au" len="18752" min="-0.452667" max="0.494965" rms="0.068392"/>
+					<simpleblockfile filename="e0000303.au" len="15705" min="-0.452667" max="0.453827" rms="0.062136"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="0"/>
