@@ -9,7 +9,7 @@ public class CatController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameController.Register ("Cat", transform);
-		InvokeRepeating ("IdleSound", 0, 5);
+		InvokeRepeating ("IdleSound", 0, 4);
 		isBusy = false;
 	}
 	

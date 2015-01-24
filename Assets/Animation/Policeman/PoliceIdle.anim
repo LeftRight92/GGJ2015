@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: KidCry
+  m_Name: PoliceIdle
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -18,7 +18,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 5c3b351ba8cec084ab8bbf2c9a6c6c5f, type: 3}
+      value: {fileID: 21300006, guid: 999395e55bb39b94c878c6912106b166, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -37,7 +37,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 5c3b351ba8cec084ab8bbf2c9a6c6c5f, type: 3}
+    - {fileID: 21300006, guid: 999395e55bb39b94c878c6912106b166, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
