@@ -12,7 +12,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	// Use this for initialization
 	void Start () {
 		kidAnimator = transform.GetComponentInChildren<Animator>();
-		InvokeRepeating ("IdleSound", 0, 3);
+		InvokeRepeating ("IdleSound", 0, 6);
 		isIdle = true;
 	}
 
@@ -63,11 +63,10 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		kidAnimator.SetTrigger ("Scratched");
 		catAnimator.SetBool ("isScratching", false);
 		transform.Translate(new Vector3(0, -3.5f, 0));
-		player.canControl = true;
 		transform.tag = "Untagged";
-//		Destroy (this);
-		
 		isBusy = false;
+		player.canControl = true;
+		
 	}
 
 
