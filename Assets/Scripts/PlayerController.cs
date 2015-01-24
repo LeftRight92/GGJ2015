@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {		
+	void FixedUpdate () 
+		{		
 		// On Left Mouse click
 		if(Input.GetButtonDown ("Push")){
 			animator.SetTrigger("Push");
