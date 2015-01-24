@@ -14,6 +14,16 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 	}
 	
 	public bool onLift(){
+		// Gets on the player
+		// gets cat
+		// goes down on the ground
+		// goes to love state
+		// goes to car
+		// car leaves
+		// kid goes monster mode
+		// monster sound
+		// gameover.jpeg
+
 		return true;
 	}
 	
