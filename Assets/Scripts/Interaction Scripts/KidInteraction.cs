@@ -76,6 +76,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 						policeCar.transform.Translate (new Vector3 (5 * Time.deltaTime, 0, 0));
 				yield return null;
 				}
+		policeCar.GetComponentInChildren<Animator> ().SetTrigger ("Empty");
 	}
 
 
@@ -84,3 +85,4 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		return true;
 	}
 }
+
