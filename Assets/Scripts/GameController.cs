@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public static class GameController {
 
-	private static PlayerController playerController;
+	private static Dictionary<string, GameObject> objects;
 
 
-	public static void registerPlayer(PlayerController player)
+	public static void Register(string name, GameObject obj)
 	{
-		playerController = player;
+		objects.Add (name, obj);
 	}
 
-	public static PlayerController getPlayer()
+	public static GameObject Get(string name)
 	{
-		return playerController;	
+		return objects.TryGetValue(name);	
 	}
 
 }
