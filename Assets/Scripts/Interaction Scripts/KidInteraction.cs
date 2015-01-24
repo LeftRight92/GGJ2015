@@ -3,9 +3,10 @@ using System.Collections;
 
 public class KidInteraction : MonoBehaviour, InteractableObject {
 
+	private Animator kidAnimator;
 	// Use this for initialization
 	void Start () {
-		
+		kidAnimator = transform.GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -16,10 +17,23 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	public bool onPush(bool facing){
 		return true;
 	}
-	
-	public bool onLift(){
-		transform.Translate(new Vector3(0, 3.5f, 0));
 
+	IEnumerator kidLiftedEvent()
+	{
+		transform.Translate(new Vector3(0, 3.5f, 0));
+		PlayerController player = GameController.getPlayer ();
+		player.canControl = false;
+		kidAnimator.SetTrigger ("Reach");
+		//Animations
+		yield return new WaitForSeconds(2);
+		kidAnimator.SetTrigger ("Scratched");
+		transform.Translate(new Vector3(0, -3.5f, 0));
+		player.canControl = true;
+	}
+
+
+	public bool onLift(){
+		StartCoroutine ("kidLiftedEvent");
 		return true;
 	}
 }
