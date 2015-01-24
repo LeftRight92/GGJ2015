@@ -5,9 +5,10 @@ public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed = 5.0f;
 	private Animator animator;
-	public AudioClip[] walkingSounds;
+	public AudioClip[] walkingSounds, liftTrue, liftFalse, pushTrue, pushFalse;
 	private AudioSource footstep;
 	public bool rightFacing = true;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +28,12 @@ public class PlayerController : MonoBehaviour {
 				// Get the interactableObject script for the target object
 				InteractableObject targetScript = (InteractableObject) target.GetComponent(typeof(InteractableObject));
 				// Execute on push command
-				targetScript.onPush(rightFacing);
+				if(targetScript.onPush(rightFacing)){
+					audio.clip = pushTrue[Random.Range (0, pushTrue.GetLength (0))];
+				}else{
+					audio.clip = pushFalse[Random.Range (0, pushFalse.GetLength (0))];
+				}
+				audio.Play();
 			}
 		}	
 		// On Right Mouse click
@@ -39,7 +45,12 @@ public class PlayerController : MonoBehaviour {
 				// Get the interactableObject script for the target object
 				InteractableObject targetScript = (InteractableObject) target.GetComponent(typeof(InteractableObject));
 				// Execute on lift command
-				targetScript.onLift();
+				if(targetScript.onLift()){
+					audio.clip = liftTrue[Random.Range (0, liftTrue.GetLength (0))];
+				}else{
+					audio.clip = liftFalse[Random.Range (0, liftFalse.GetFalse (0))];
+				}
+				audio.Play();
 			}			
 		}
 		// On left right movement
