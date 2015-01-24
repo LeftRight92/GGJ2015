@@ -429,7 +429,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .889999986, y: .889999986}
+  m_Size: {x: 2.54999995, y: 3.75}
   m_Center: {x: 0, y: 0}
 --- !u!4 &2004640478
 Transform:
