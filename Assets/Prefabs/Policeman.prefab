@@ -155,9 +155,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9254c1fc09e8e68469f0099eec16f1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idle: []
-  lifted: []
-  happyIdle: []
+  idle:
+  - {fileID: 8300000, guid: ae8d7df64c1731342ada0c65eb894d84, type: 3}
+  - {fileID: 8300000, guid: 00950c39eea82b44192dae60665da339, type: 3}
+  - {fileID: 8300000, guid: edca176722dcd3840bf678e4d0a39e44, type: 3}
+  - {fileID: 8300000, guid: 688d038e85932014ea25def8bce86abb, type: 3}
+  - {fileID: 8300000, guid: 550e3a88326b6e74abe95bac3856b0a2, type: 3}
+  - {fileID: 8300000, guid: 60b78839f5ba5fc41a981c7eec605e86, type: 3}
+  - {fileID: 8300000, guid: b23dd08bddb62604e9fe9822acc34067, type: 3}
+  lifted:
+  - {fileID: 8300000, guid: 84498949863d55f4f96a66420902c06f, type: 3}
+  - {fileID: 8300000, guid: 626caf4c51085104984396b76b2e4a8a, type: 3}
+  - {fileID: 8300000, guid: 9733976f31b3bdc4fbf47967c5ff60c5, type: 3}
+  - {fileID: 8300000, guid: 59f5b6da6a461c04f9a7650dc612565a, type: 3}
+  happyIdle:
+  - {fileID: 8300000, guid: 03283cb140a9f2d4b849b97d7ffbab04, type: 3}
+  - {fileID: 8300000, guid: 2f78e7ad3ca46084fa712a74d4382ec4, type: 3}
+  - {fileID: 8300000, guid: 872fa7feee9add5498506bd1aacf4f91, type: 3}
+  - {fileID: 8300000, guid: bfa2c3d077b26c64c86113fbafd95043, type: 3}
 --- !u!212 &21212082
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -73,12 +73,14 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		yield return null;
 		policeCar = GameController.Get("PoliceCar");
 		Debug.Log ("ASD" + policeCar);
-		while (policeCar.position.x < -6.35f) {
-						policeCar.transform.Translate (new Vector3 (5 * Time.deltaTime, 0, 0));
+		while (policeCar.position.x < -3.35f) {
+						policeCar.transform.Translate (new Vector3 (Time.deltaTime, 0, 0));
 				yield return null;
 				}
+
+		yield return new WaitForSeconds (1);
 		policeCar.GetComponentInChildren<Animator> ().SetTrigger ("Empty");
-		Instantiate (policeManPrefab, new Vector3 (-6, -1.9f, 0), Quaternion.identity);
+		Instantiate (policeManPrefab, new Vector3 (-3, -1.9f, 0), Quaternion.identity);
 	}
 
 

@@ -31,18 +31,6 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 
 	}
 
-	// 2.6 -> -6
-	IEnumerator moveToCar(){
-		while (transform.position.x > -6F) {
-			transform.Translate(new Vector3(-5*Time.deltaTime,0,0));
-			yield return null;
-		}
-		// Destroy this guy
-		// Change car state
-		// Move car
-		// make kid kill player
-	}
-
 	// Update is called once per frame
 	void Update () {
 		//Move towards the car
@@ -74,21 +62,37 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		policemanAnimator.SetBool ("Happy", true);
 		Transform cat = GameController.Get ("Cat");
 		cat.parent = transform;
-		cat.position = new Vector3 (0, 2.4f, 0);
+		cat.localPosition = new Vector3 (0.35f, 1.39f, 0);
 
 		audio.clip = happyIdle[Random.Range (0,happyIdle.GetLength (0))];
+
 		audio.Play ();
 		yield return new WaitForSeconds(0.5F);
 
 		// goes down on the ground
-		transform.Translate (new Vector3 (0, 3.5f, 0));
+		transform.Translate (new Vector3 (0, -3.5f, 0));
 		isHappy = true;
 		player.canControl = true;			
 		 
 		isBusy = false;
 
-		StartCoroutine ("moveToCar");
+		//Move to car
+				
+		policemanAnimator.SetBool ("Walking", true);
+		while (transform.position.x > -3F) {
+			transform.Translate(new Vector3(-5*Time.deltaTime,0,0));
+			yield return null;
+		}
 
+		// Destroy this guy/cat 
+
+		transform.GetChild (0).active = false;
+		Destroy (cat.gameObject);
+
+		// Change car state
+		// Move car
+		// make kid kill player
+		
 	}
 
 

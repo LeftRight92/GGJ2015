@@ -431,7 +431,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 999395e55bb39b94c878c6912106b166, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &275719057
@@ -871,6 +871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb24b38b3540e445b0d3bf35519ae9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  policeCarPrefab: {fileID: 167188, guid: 08f90e4989c284a42a2ad188c39ec8c1, type: 2}
+  policeManPrefab: {fileID: 0}
   pushed:
   - {fileID: 8300000, guid: 87b916e0172515f49b348d03565fc09f, type: 3}
   - {fileID: 8300000, guid: 4dcce336ad2333d46bebd0055118dc94, type: 3}
@@ -885,7 +887,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ebfa90d879ab83a4ab3b31945b1022f1, type: 3}
   - {fileID: 8300000, guid: 19050cdbbd41de643986849170d4f0f7, type: 3}
   - {fileID: 8300000, guid: d944070277fcbdd488509ab93758daaf, type: 3}
-  idle: []
+  idle:
+  - {fileID: 8300000, guid: 5334215606c20814d959da3082d3f0bd, type: 3}
+  - {fileID: 8300000, guid: 46f2c55abed831e46b3ca322377e940a, type: 3}
+  - {fileID: 8300000, guid: a2547a46ad9976d498d9e1546dffcab8, type: 3}
+  - {fileID: 8300000, guid: a7175f2045ee58e4d81cf776e3541ed1, type: 3}
+  - {fileID: 8300000, guid: 7c079d169ba9b824da2045ec4c83a720, type: 3}
+  - {fileID: 8300000, guid: d085345e1f0eb494589d8b5c04a324c7, type: 3}
   satan: []
   hurt:
   - {fileID: 8300000, guid: 2220026b337694b4bbe5d40d61f75da2, type: 3}
@@ -900,7 +908,7 @@ AudioSource:
   m_GameObject: {fileID: 1139530924}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5334215606c20814d959da3082d3f0bd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -987,7 +995,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300004, guid: 5c3b351ba8cec084ab8bbf2c9a6c6c5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!95 &1328692030
@@ -1027,7 +1035,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 412082, guid: 8718d30e9ebfa5640bf2ed4d3c5cbec9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8.38000011
       objectReference: {fileID: 0}
     - target: {fileID: 412082, guid: 8718d30e9ebfa5640bf2ed4d3c5cbec9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1303,7 +1311,7 @@ Transform:
   m_PrefabInternal: {fileID: 1342589533}
   m_GameObject: {fileID: 1998976770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.38000011, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 275719057}
@@ -1321,6 +1329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9254c1fc09e8e68469f0099eec16f1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idle: []
+  lifted: []
+  happyIdle: []
 --- !u!61 &1998976773
 BoxCollider2D:
   m_ObjectHideFlags: 0
