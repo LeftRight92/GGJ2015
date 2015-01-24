@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animator = transform.GetComponentInChildren<Animator>();
-		footstep = transform.GetComponentInChildren<AudioSource>();
+		footstep = transform.GetChild (2).GetComponent<AudioSource>();
 		InvokeRepeating("WalkingSound",0,0.35f);
 	}
 	
