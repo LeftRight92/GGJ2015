@@ -1,6 +1,6 @@
 ﻿interface InteractableObject
 {
-	void onPush();
+	void onPush(bool rightFacing);
 	void onLift();
 }
 
