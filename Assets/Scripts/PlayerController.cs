@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 				// Get the interactableObject script for the target object
 				InteractableObject targetScript = (InteractableObject) target.GetComponent(typeof(InteractableObject));
 				// Execute on push command
-				targetScript.onPush();
+				targetScript.onPush(rightFacing);
 			}
 		}	
 		// On Right Mouse click
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 				// Get the interactableObject script for the target object
 				InteractableObject targetScript = (InteractableObject) target.GetComponent(typeof(InteractableObject));
 				// Execute on lift command
-				targetScript.onLift(rightFacing);
+				targetScript.onLift();
 			}			
 		}
 		// On left right movement
