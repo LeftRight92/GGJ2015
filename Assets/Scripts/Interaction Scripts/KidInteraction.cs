@@ -4,6 +4,7 @@ using System.Collections;
 public class KidInteraction : MonoBehaviour, InteractableObject {
 
 	private Animator kidAnimator;
+	private Animator catAnimator;
 	// Use this for initialization
 	void Start () {
 		kidAnimator = transform.GetComponentInChildren<Animator>();
