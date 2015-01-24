@@ -4,10 +4,11 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed = 5.0f;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
-	
+		animator = transform.GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -50,8 +51,12 @@ public class PlayerController : MonoBehaviour {
 		// On left right movement
 		if(Input.GetAxis ("Horizontal") > 0){
 			transform.Translate (new Vector3(moveSpeed * Time.deltaTime,0,0));
+			animator.SetBool("Walking", true);
 		}else if(Input.GetAxis ("Horizontal") < 0){
 			transform.Translate (new Vector3(-moveSpeed * Time.deltaTime,0,0));
+			animator.SetBool("Walking", true);
+		}else{
+			animator.SetBool("Walking", false);
 		}
 	}
 }
