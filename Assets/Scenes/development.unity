@@ -261,6 +261,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 05239d95371aed547a0a1a8f62b2e42b, type: 3}
   - {fileID: 8300000, guid: 85f44585aeb31714caa607c0f95deec4, type: 3}
   rightFacing: 1
+  canControl: 1
 --- !u!50 &54567256
 Rigidbody2D:
   m_ObjectHideFlags: 0
