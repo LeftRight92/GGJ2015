@@ -58,11 +58,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 498218}
-  - 212: {fileID: 21298218}
   - 61: {fileID: 6198218}
   - 50: {fileID: 5098218}
   - 114: {fileID: 11498218}
   - 82: {fileID: 8298218}
+  - 212: {fileID: 21298218}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -364,7 +364,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21298218
 SpriteRenderer:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198218}
