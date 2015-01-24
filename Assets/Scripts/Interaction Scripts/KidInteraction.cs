@@ -22,7 +22,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	IEnumerator kidLiftedEvent()
 	{
 		transform.Translate(new Vector3(0, 3.5f, 0));
-		PlayerController player = GameController.getPlayer ();
+		PlayerController player = GameController.Get ("Player").GetComponent<PlayerController>();
 		player.canControl = false;
 		kidAnimator.SetTrigger ("Reach");
 		//Animations
