@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour {
 		// On Left Mouse click
 		if(Input.GetButtonDown ("Push")){
 			animator.SetTrigger("Push");
-			Debug.Log ("Pushing!");
-
 			// Get the target object
 			Transform target = transform.GetComponentInChildren<PushLiftCollider>().getTarget();
 			if(target != null){
@@ -30,8 +28,6 @@ public class PlayerController : MonoBehaviour {
 		// On Right Mouse click
 		if(Input.GetButtonDown ("Lift")){
 			animator.SetTrigger ("Lift");
-			Debug.Log ("Do you maybe lift?");
-
 			// Get the target object
 			Transform target = transform.GetComponentInChildren<PushLiftCollider>().getTarget();
 			if(target != null){
@@ -44,9 +40,11 @@ public class PlayerController : MonoBehaviour {
 		// On left right movement
 		if(Input.GetAxis ("Horizontal") > 0){
 			transform.Translate (new Vector3(moveSpeed * Time.deltaTime,0,0));
+			transform.GetChild (1).localScale = new Vector3(1,1,1);
 			animator.SetBool("Walking", true);
 		}else if(Input.GetAxis ("Horizontal") < 0){
 			transform.Translate (new Vector3(-moveSpeed * Time.deltaTime,0,0));
+			transform.GetChild (1).localScale = new Vector3(-1,1,1);
 			animator.SetBool("Walking", true);
 		}else{
 			animator.SetBool("Walking", false);
