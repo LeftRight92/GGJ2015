@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class KidInteraction : MonoBehaviour, InteractableObject {
@@ -23,13 +23,19 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	{
 		transform.Translate(new Vector3(0, 3.5f, 0));
 		PlayerController player = GameController.Get ("Player").GetComponent<PlayerController>();
+		catAnimator = GameController.Get ("Cat").GetComponent<Animator> ();
 		player.canControl = false;
 		kidAnimator.SetTrigger ("Reach");
+		catAnimator.SetBool ("isScratching", true);
 		//Animations
 		yield return new WaitForSeconds(2);
 		kidAnimator.SetTrigger ("Scratched");
+		catAnimator.SetBool ("isScratching", false);
 		transform.Translate(new Vector3(0, -3.5f, 0));
 		player.canControl = true;
+		transform.tag = "Untagged";
+		Destroy (this);
+
 	}
 
 

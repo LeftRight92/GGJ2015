@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
 						}	
 						// On Right Mouse click
 						if (Input.GetButtonDown ("Lift")) {
-								animator.SetTrigger ("Lift");
+								
 								// Get the target object
 								Transform target = transform.GetComponentInChildren<PushLiftCollider> ().getTarget ();
 								if (target != null) {
@@ -62,6 +62,14 @@ public class PlayerController : MonoBehaviour {
 										audio.clip = liftFalse [Random.Range (0, liftFalse.GetLength (0))];
 										audio.Play ();
 								}			
+						}
+						if (Input.GetButton ("Lift"))
+						{
+							animator.SetBool ("Lift",true);
+						}
+						else 
+						{
+							animator.SetBool ("Lift", false);
 						}
 						// On left right movement
 						if (Input.GetAxis ("Horizontal") > 0) {

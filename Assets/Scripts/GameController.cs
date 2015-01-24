@@ -4,17 +4,20 @@ using System.Collections.Generic;
 
 public static class GameController {
 
-	private static Dictionary<string, GameObject> objects;
+	private static Transform value;
+	private static Dictionary<string, Transform> objects = new Dictionary<string, Transform>();
 
-
-	public static void Register(string name, GameObject obj)
+	public static void Register(string name, Transform obj)
 	{
 		objects.Add (name, obj);
 	}
 
-	public static GameObject Get(string name)
+	public static Transform Get(string name)
 	{
-		return objects.TryGetValue(name);	
+		if (objects.TryGetValue (name, out value))
+						return value;
+
+		return null;
 	}
 
 }

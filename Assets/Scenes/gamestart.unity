@@ -235,6 +235,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 522046113}
   - 212: {fileID: 522046112}
+  - 114: {fileID: 522046114}
+  - 95: {fileID: 522046115}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -276,6 +278,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &522046114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522046111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77395fa1dd2767d4fadda8740bbd5fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &522046115
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522046111}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03494f4d10b7fad4f9182a4d808a1a0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &689322887
 GameObject:
   m_ObjectHideFlags: 0
