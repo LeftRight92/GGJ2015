@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour {
 					audio.clip = pushFalse[Random.Range (0, pushFalse.GetLength (0))];
 				}
 				audio.Play();
+			}else{
+				audio.clip = pushFalse[Random.Range (0, pushFalse.GetLength (0))];
+				audio.Play();
 			}
 		}	
 		// On Right Mouse click
@@ -48,8 +51,11 @@ public class PlayerController : MonoBehaviour {
 				if(targetScript.onLift()){
 					audio.clip = liftTrue[Random.Range (0, liftTrue.GetLength (0))];
 				}else{
-					audio.clip = liftFalse[Random.Range (0, liftFalse.GetFalse (0))];
+					audio.clip = liftFalse[Random.Range (0, liftFalse.GetLength (0))];
 				}
+				audio.Play();
+			}else{
+				audio.clip = liftFalse[Random.Range (0, liftFalse.GetLength (0))];
 				audio.Play();
 			}			
 		}

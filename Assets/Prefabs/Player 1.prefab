@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &167564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 467564}
+  - 82: {fileID: 8267564}
+  m_Layer: 0
+  m_Name: Footstep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &198214
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +70,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &467564
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 498218}
+  m_RootOrder: 2
 --- !u!4 &498214
 Transform:
   m_ObjectHideFlags: 1
@@ -90,6 +118,7 @@ Transform:
   m_Children:
   - {fileID: 498214}
   - {fileID: 498216}
+  - {fileID: 467564}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5098218
@@ -129,6 +158,64 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 2.54999995, y: 3.75}
   m_Center: {x: 0, y: 0}
+--- !u!82 &8267564
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167564}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!82 &8298218
 AudioSource:
   m_ObjectHideFlags: 1
@@ -235,6 +322,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7ddcb3f98b4043543b73edbb5090732a, type: 3}
   - {fileID: 8300000, guid: 5f02437beb89d874a9ff69f75f49bcd2, type: 3}
   - {fileID: 8300000, guid: ce0b77e5d7f071e4790e34cc59c30f01, type: 3}
+  liftTrue:
+  - {fileID: 8300000, guid: ae57f75556f6808478eb02a04f308456, type: 3}
+  - {fileID: 8300000, guid: c3f812355997cf143a9c2f4237f64186, type: 3}
+  - {fileID: 8300000, guid: 9309f335c23bb7d48bf508bafba0b29b, type: 3}
+  - {fileID: 8300000, guid: e01828611e7341245b1eba06cbf6fa61, type: 3}
+  liftFalse:
+  - {fileID: 8300000, guid: 039b21e612a2e4845ad4452201669b43, type: 3}
+  - {fileID: 8300000, guid: 6547b6facd210144b838639359fd9c52, type: 3}
+  - {fileID: 8300000, guid: 87b3cc2d22697e3458071a6f457257c9, type: 3}
+  pushTrue:
+  - {fileID: 8300000, guid: 37ed843322996c5488bf2b18ed3af8e2, type: 3}
+  - {fileID: 8300000, guid: 79c83a2a8aae5a64bad080d5cdd26542, type: 3}
+  - {fileID: 8300000, guid: a7afdc58b6101364eb644fa78a7fe8c8, type: 3}
+  pushFalse:
+  - {fileID: 8300000, guid: 4249fd482f1fd6644bfb0d784d37ca27, type: 3}
+  - {fileID: 8300000, guid: 05239d95371aed547a0a1a8f62b2e42b, type: 3}
+  - {fileID: 8300000, guid: 85f44585aeb31714caa607c0f95deec4, type: 3}
   rightFacing: 1
 --- !u!212 &21298216
 SpriteRenderer:
