@@ -582,6 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   policeCarPrefab: {fileID: 167188, guid: 08f90e4989c284a42a2ad188c39ec8c1, type: 2}
+  policeManPrefab: {fileID: 112082, guid: 8718d30e9ebfa5640bf2ed4d3c5cbec9, type: 2}
   pushed:
   - {fileID: 8300000, guid: 87b916e0172515f49b348d03565fc09f, type: 3}
   - {fileID: 8300000, guid: 4dcce336ad2333d46bebd0055118dc94, type: 3}
@@ -718,6 +719,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11470266, guid: 50e6d43e18994c347b60781739305fdc, type: 2}
+      propertyPath: policeManPrefab
+      value: 
+      objectReference: {fileID: 112082, guid: 8718d30e9ebfa5640bf2ed4d3c5cbec9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50e6d43e18994c347b60781739305fdc, type: 2}
   m_RootGameObject: {fileID: 1143135298}

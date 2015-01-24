@@ -8,6 +8,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	private bool isIdle; //If is not idle, then is hurt (when considering the new sound in looping
 	private bool isBusy; //Used to check if the idle sounds can be played
 	public GameObject policeCarPrefab;
+	public GameObject policeManPrefab;
 	private Transform policeCar;
 	public AudioClip[] pushed, lifted, idle, satan, hurt;
 
@@ -77,6 +78,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 				yield return null;
 				}
 		policeCar.GetComponentInChildren<Animator> ().SetTrigger ("Empty");
+		Instantiate (policeManPrefab, new Vector3 (-6, -1.9f, 0), Quaternion.identity);
 	}
 
 
