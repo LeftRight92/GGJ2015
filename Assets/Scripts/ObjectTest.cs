@@ -14,8 +14,8 @@ public class ObjectTest : MonoBehaviour, InteractableObject {
 	}
 
 	// Execute on push command
-	public void onPush() {
-		Debug.Log (transform + "Being Pushed");
+	public void onPush(bool right) {
+		Debug.Log (transform + "Being Pushed" + right);
 		transform.Translate (new Vector3 (0.5f, 0, 0));
 	}
 

@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed = 5.0f;
 	private Animator animator;
+	private bool rightFacing = true;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 				// Get the interactableObject script for the target object
 				InteractableObject targetScript = (InteractableObject) target.GetComponent(typeof(InteractableObject));
 				// Execute on push command
-				targetScript.onPush();
+				targetScript.onPush(rightFacing);
 			}
 		}	
 		// On Right Mouse click
@@ -40,10 +41,12 @@ public class PlayerController : MonoBehaviour {
 		}
 		// On left right movement
 		if(Input.GetAxis ("Horizontal") > 0){
+			rightFacing = true;
 			transform.Translate (new Vector3(moveSpeed * Time.deltaTime,0,0));
 			transform.GetChild (1).localScale = new Vector3(1,1,1);
 			animator.SetBool("Walking", true);
 		}else if(Input.GetAxis ("Horizontal") < 0){
+			rightFacing = false;
 			transform.Translate (new Vector3(-moveSpeed * Time.deltaTime,0,0));
 			transform.GetChild (1).localScale = new Vector3(-1,1,1);
 			animator.SetBool("Walking", true);
