@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5.0f;
 	private Animator animator;
 	public AudioClip[] walkingSounds;
+	public bool rightFacing = true;
 
 	// Use this for initialization
 	void Start () {
@@ -36,17 +37,19 @@ public class PlayerController : MonoBehaviour {
 				// Get the interactableObject script for the target object
 				InteractableObject targetScript = (InteractableObject) target.GetComponent(typeof(InteractableObject));
 				// Execute on lift command
-				targetScript.onLift();
+				targetScript.onLift(rightFacing);
 			}			
 		}
 		// On left right movement
 		if(Input.GetAxis ("Horizontal") > 0){
 			transform.Translate (new Vector3(moveSpeed * Time.deltaTime,0,0));
 			transform.GetChild (1).localScale = new Vector3(1,1,1);
+			rightFacing = true;
 			animator.SetBool("Walking", true);
 		}else if(Input.GetAxis ("Horizontal") < 0){
 			transform.Translate (new Vector3(-moveSpeed * Time.deltaTime,0,0));
 			transform.GetChild (1).localScale = new Vector3(-1,1,1);
+			rightFacing = false;
 			animator.SetBool("Walking", true);
 		}else{
 			animator.SetBool("Walking", false);
