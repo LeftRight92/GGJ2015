@@ -14,14 +14,16 @@ public class ObjectTest : MonoBehaviour, InteractableObject {
 	}
 
 	// Execute on push command
-	public void onPush(bool right) {
+	public bool onPush(bool right) {
 		Debug.Log (transform + "Being Pushed" + right);
 		transform.Translate (new Vector3 (0.5f, 0, 0));
+		return true;
 	}
 
 	// Execute on lift command
-	public void onLift() {
+	public bool onLift() {
 		Debug.Log (transform + "Being Lift");
 		transform.Translate (new Vector3 (0, 0.5f, 0));
+		return true;
 	}
 }
