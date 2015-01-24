@@ -18,6 +18,8 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	}
 	
 	public bool onLift(){
+		transform.Translate(new Vector3(0, 3.5f, 0));
+
 		return true;
 	}
 }
