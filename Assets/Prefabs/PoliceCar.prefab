@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 467188}
   - 82: {fileID: 8267188}
   - 61: {fileID: 6167188}
+  - 114: {fileID: 11404604}
   m_Layer: 0
   m_Name: PoliceCar
   m_TagString: Interactable
@@ -143,6 +144,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11404604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2d46c9c5c5c024e8e00c279c75a759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21267188
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -162,7 +174,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ca404ef442705814ba94612420752f3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
