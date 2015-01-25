@@ -33,7 +33,9 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		}
 		policemanAnimator.SetBool ("Walking", false);
 		transform.tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(transform);
 		GameController.Get ("PoliceCar").tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(GameController.Get ("PoliceCar"));
 
 	}
 
@@ -51,7 +53,9 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 	IEnumerator stealCatEvent(){
 
 		isBusy = true;
-		transform.tag = "Untagged";		
+		transform.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);	
+			
 
 		// Lock player
 		PlayerController player = GameController.Get ("Player").GetComponent<PlayerController>();
@@ -96,6 +100,7 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		Transform car = GameController.Get ("PoliceCar");
 
 		car.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(car);
 
 		// Change car state
 		Animator carAnim = car.GetComponentInChildren<Animator>();

@@ -56,6 +56,7 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 
 		firemanAnimator.SetBool ("Walking", false);
 		transform.tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(transform);
 
 	}
 	
@@ -73,4 +74,6 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 	
 		return true;
 	}
+	
+		//GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);
 }
