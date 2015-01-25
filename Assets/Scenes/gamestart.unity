@@ -341,8 +341,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5df76d6c3ee767a4ab311169cadf02bd, type: 3}
   - {fileID: 8300000, guid: 9ea2b1dedd8936846897d7ae4b70fbc4, type: 3}
   attack: {fileID: 8300000, guid: 073cf975315bebd45a8f4bd23c7963b9, type: 3}
-  gravePrefab: {fileID: 0}
-  catGhostPrefab: {fileID: 0}
+  gravePrefab: {fileID: 174496, guid: f50ffb58ff900334ea3dcba72a5bd2f5, type: 2}
+  catGhostPrefab: {fileID: 101734, guid: 32f15caad42ccd548a54295b3d17c63e, type: 2}
 --- !u!95 &522046115
 Animator:
   serializedVersion: 3
