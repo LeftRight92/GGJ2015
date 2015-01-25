@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour {
 			} else {
 					animator.SetBool ("Walking", false);
 			}
+		}else{
+			animator.SetBool("Walking", false);
 		}
 	}
 
