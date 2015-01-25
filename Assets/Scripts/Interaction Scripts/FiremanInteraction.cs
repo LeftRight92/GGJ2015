@@ -8,7 +8,7 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 
 	public AudioClip idle;
 	public GameObject hoze;
-//	public GameObject hydrant;
+	public GameObject water;
 
 	// Use this for initialization
 	void Start () {
@@ -39,12 +39,12 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			yield return null;
 		}
 
-		//spawn hydrant
+		//spawn water
 		// local
-//		GameObject hydrantObject = Instantiate (hydrant, new Vector3 (0, 0, 0), Quaternion.identity) as GameObject;
-//		hydrantObject.transform.parent = transform;
-//		hydrantObject.transform.localPosition = new Vector3 (3.25f, 0.03f, 0);
-//		hydrantObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 2;
+		GameObject waterObject = Instantiate (water, new Vector3 (0, 0, 0), Quaternion.identity) as GameObject;
+		waterObject.transform.parent = transform;
+		waterObject.transform.localPosition = new Vector3 (-4.11f, -1.5f, 0);
+		waterObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 2;
 
 		//spawn hoze
 		// local x = 0.92 local y = -1.11
