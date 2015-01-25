@@ -52,6 +52,7 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 		cat.GetComponentInChildren<Animator>().SetBool("isScratching", false);
 		cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
 		cat.tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(cat);
 		cat.audio.mute = true;
 		yield return null;
 	}
