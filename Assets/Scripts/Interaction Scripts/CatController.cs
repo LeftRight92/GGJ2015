@@ -74,9 +74,12 @@ public class CatController : MonoBehaviour, InteractableObject {
 		yield return null;
 		Debug.Log (GameController.Get ("GhostCat"));
 		GameController.Get ("GhostCat").GetComponentInChildren<SpriteRenderer> ().sortingOrder = 4;
+
 		//Play Ghost sound
 		transform.GetComponent<AudioSource>().clip = ghostSpawn;
 		transform.GetComponent<AudioSource>().Play ();
+		yield return WaitForSeconds (6.5f);
+
 		//Cat Move to child face
 
 		//Cat switch to attack
