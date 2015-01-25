@@ -65,9 +65,20 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 	
 	}
 	
-	public bool onPush(bool facingRight){
-	
+	public bool onPush(bool rightFacing){
+		
+		StartCoroutine ("BoomHeadshot");
 		return true;
+	}
+	
+	IEnumerator BoomHeadshot(){
+
+		//Rotate clockwise 90 degrees
+		while(transform.rotation.eulerAngles.z > 270){			
+			transform.Rotate(Vector3.back * Time.deltaTime* 120); //it's good enough
+			yield return null;			
+		}
+
 	}
 	
 	public bool onLift(){
