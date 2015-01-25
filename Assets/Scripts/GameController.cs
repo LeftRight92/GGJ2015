@@ -7,6 +7,10 @@ public static class GameController {
 	private static Transform value;
 	private static Dictionary<string, Transform> objects = new Dictionary<string, Transform>();
 
+	public static void clearState(){
+		objects = new Dictionary<string, Transform>();
+	}
+
 	public static void Register(string name, Transform obj)
 	{
 		objects.Add (name, obj);
