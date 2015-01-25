@@ -46,10 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GhostCatInteraction.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\CatController.cs" />
+     <Compile Include="Assets\Scripts\Interaction Scripts\FiremanInteraction.cs" />
+     <Compile Include="Assets\Scripts\Interaction Scripts\GhostCatInteraction.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\InteractableObject.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\KidInteraction.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\ObjectTest.cs" />
