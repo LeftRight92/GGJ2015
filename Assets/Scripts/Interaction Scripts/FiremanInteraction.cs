@@ -113,15 +113,16 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 		// Crash the copter
 		helicopterObject = Instantiate (helicopter, new Vector3 (4f, 11f, 0), Quaternion.identity) as GameObject;
 		Vector3 target = new Vector3 (-4.76f, -1.61f, 0);
-		helicopterObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 3;
+		helicopterObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 4;
 		helicopterObject.transform.localScale = new Vector3 (-1, 1, 1);
 
 		//Put the pilot into the copter
 
 		pilotObject = Instantiate (pilot, new Vector3(0,0,0), Quaternion.identity) as GameObject;
 		pilotObject.transform.parent = helicopterObject.transform;
-		pilotObject.transform.localPosition = new Vector3 (0, 0, 0);
-		pilotObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 2;
+		pilotObject.transform.localPosition = new Vector3 (0.33f, -0.52f, 0);
+		pilotObject.transform.Rotate (0, 0, 342);
+		pilotObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 3;
 
 
 		helicopterObject.transform.Rotate (new Vector3 (0, 0, 60));
@@ -130,7 +131,7 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 		HelicopterInteraction heliInteraction = helicopterObject.GetComponent<HelicopterInteraction> ();
 		heliInteraction.PlayHeliHit();
 
-		float speed = 1;
+		float speed = 3;
 
 		Transform player = GameController.Get ("Player");
 
@@ -138,7 +139,7 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 		       Mathf.Abs (helicopterObject.transform.position.x - target.x) > 0.5f) {
 //			Debug.Log ("3");					
 			helicopterObject.transform.position = Vector3.MoveTowards(helicopterObject.transform.position, player.transform.position, speed*Time.deltaTime);
-			speed += 0.5f;
+//			speed += 0.5f;
 			yield return null;						
 		}
 
@@ -154,6 +155,10 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			
 			yield return null;			
 		}	
+
+		yield return new WaitForSeconds (1);
+
+		Application.LoadLevel ("game_over");
 
 //		helicopterObject.tag = "Interactable";
 //		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(helicopterObject.transform);
