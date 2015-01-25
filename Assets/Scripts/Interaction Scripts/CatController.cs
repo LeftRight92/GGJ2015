@@ -83,9 +83,14 @@ public class CatController : MonoBehaviour, InteractableObject {
 		GameController.Get ("GhostCat").GetComponent<AudioSource> ().loop = true;
 		GameController.Get ("GhostCat").GetComponent<AudioSource> ().Play ();
 		yield return null;
-		//Cat Move to child face
 
-		//Cat switch to attack
+		//Cat swtich to attack face
+
+
+		//Child crying
+		GameController.Get ("Kid").GetComponentInChildren<Animator> ().SetTrigger ("Scratched");
+		GameController.Get ("Kid").GetComponentInChildren<KidInteraction> ().setIdle (false);
+
 		//Play Attack sound
 		//Ghost cat becomes interactabru
 

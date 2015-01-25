@@ -23,7 +23,11 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	public void setBusy(bool busy){
 		isBusy = busy;
 	}
-	
+
+	public void setIdle(bool idle){
+		isIdle = idle;
+	}
+
 	public void playAngrySound(){
 		audio.clip = monster[Random.Range (0,monster.GetLength (0))];
 		audio.Play ();
