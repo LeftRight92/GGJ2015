@@ -10,6 +10,7 @@ public class CatController : MonoBehaviour, InteractableObject {
 	public GameObject catGhostPrefab;
 
 
+
 	// Use this for initialization
 	void Start () {
 		GameController.Register ("Cat", transform);
@@ -78,7 +79,8 @@ public class CatController : MonoBehaviour, InteractableObject {
 		//Play Ghost sound
 
 		yield return new WaitForSeconds (6.5f);
-
+		GameController.Get ("GhostCat").GetComponent<AudioSource> ().clip = attack;
+		GameController.Get ("GhostCat").GetComponent<AudioSource> ().loop = true;
 		//Cat Move to child face
 
 		//Cat switch to attack
