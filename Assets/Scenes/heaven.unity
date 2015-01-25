@@ -231,8 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd09716e2df59a478a3f34e8f39aebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostSpawn: {fileID: 0}
-  ghostAttack: {fileID: 0}
+  idle: []
+  possessed: {fileID: 21300000, guid: d1184c59e371cb849927629d7ad262cc, type: 3}
 --- !u!61 &171035360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -951,7 +951,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c91371e6f3cca1d49bb20f07d116979d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3106e5776e62aa441a7c424ff850e6ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &947129198
 Prefab:
@@ -1038,8 +1038,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 460258, guid: 2a9820e46b2fd6044be0dce978298847, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 21260258, guid: 2a9820e46b2fd6044be0dce978298847, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3106e5776e62aa441a7c424ff850e6ff,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a9820e46b2fd6044be0dce978298847, type: 2}
   m_RootGameObject: {fileID: 879996980}
