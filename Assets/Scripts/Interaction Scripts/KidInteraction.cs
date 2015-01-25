@@ -82,15 +82,20 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		Instantiate (policeCarPrefab, new Vector3 (-12, -1.2f, 0), Quaternion.identity);
 		yield return null;
 		policeCar = GameController.Get("PoliceCar");
+
+
 		Debug.Log ("ASD" + policeCar);
+		//TODO Play the car coming sound
 		while (policeCar.position.x < -3.35f) {
 						policeCar.transform.Translate (new Vector3 (Time.deltaTime, 0, 0));
 				yield return null;
 				}
-
+		//TODO Play the car breaks
 		yield return new WaitForSeconds (1);
+
 		policeCar.GetComponentInChildren<Animator> ().SetTrigger ("Empty");
 		Instantiate (policeManPrefab, new Vector3 (-3, -1.9f, 0), Quaternion.identity);
+
 	}
 
 

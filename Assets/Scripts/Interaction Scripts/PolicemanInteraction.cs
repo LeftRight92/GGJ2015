@@ -110,6 +110,8 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		kidScript.setBusy (true);
 		kidScript.playAngrySound ();
 
+		yield return new WaitForSeconds (1.5f);
+		Application.LoadLevel ("game_over");
 		//GameOver
 		
 	}
