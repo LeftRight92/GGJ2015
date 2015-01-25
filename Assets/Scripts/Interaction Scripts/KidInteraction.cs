@@ -115,6 +115,9 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 
 		yield return new WaitForSeconds (1);
 
+		GameController.Get ("PoliceCar").tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(GameController.Get ("PoliceCar"));
+		
 		policeCar.GetComponentInChildren<Animator> ().SetTrigger ("Empty");
 		Instantiate (policeManPrefab, new Vector3 (-3, -1.9f, 0), Quaternion.identity);
 

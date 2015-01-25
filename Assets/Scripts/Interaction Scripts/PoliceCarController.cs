@@ -55,7 +55,7 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 
 			//Set character to uncontrollable
 			PlayerController player = GameController.Get ("Player").GetComponent<PlayerController> ();
-			player.canControl = false;
+//			player.canControl = false;
 			GameController.Get ("PoliceCar").GetComponentInChildren<SpriteRenderer>().sortingOrder = 4;
 			//Move Car To Tree
 			while (GameController.Get ("PoliceCar").position.x < 1) {
