@@ -14,6 +14,7 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 	public GameObject water;
 	public GameObject helicopter;
 	public GameObject pilot; 
+	public GameObject explosion;
 
 	// Use this for initialization
 	void Start () {
@@ -143,7 +144,14 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			yield return null;						
 		}
 
-		heliInteraction.PlayHeliCrash();		
+		player.GetComponent<PlayerController> ().canControl = false;
+		
+		GameObject explosionObject = Instantiate (explosion, helicopterObject.transform.position, Quaternion.identity) as GameObject;
+
+		explosionObject.GetComponentInChildren<SpriteRenderer>().sortingOrder = 8;
+
+
+//		heliInteraction.PlayHeliCrash();		
 
 		// Reduce the hoze
 		while(water_sprite.transform.localScale.x > 0){				
@@ -155,6 +163,8 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			
 			yield return null;			
 		}	
+
+
 
 		yield return new WaitForSeconds (1);
 
