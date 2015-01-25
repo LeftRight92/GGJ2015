@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PushLiftCollider : MonoBehaviour {
 
-	public Transform target;
+	//reimpliment as array
+	//implement a 'notifyDestroyed()
+	//public Transform target;
+	private List<Transform> targets;
 
 	// Use this for initialization
 	void Start () {
@@ -19,21 +23,28 @@ public class PushLiftCollider : MonoBehaviour {
 		return target;
 	}
 
+	public void notifyDestroy(Transform other){
+		if(targets.Contains(other)){
+			targets.Remove (other);
+		}
+	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		Debug.Log ("Entering "+other.transform);
 		if(other.transform.tag == "Interactable"){
 			Debug.Log ("Setting current push lift target to "+other.transform);
-			target = other.transform;
+			//target = other.transform;
+			targets.Add(other.transform);
 		}
 	
 	}
 	
 	void OnTriggerExit2D(Collider2D other){
 		Debug.Log ("Exiting" +other.transform);
-		if(other.transform.tag == "Interactable" && other.transform == target){
-			Debug.Log ("Unsetting push lift target");
-			target = null;
+		if(other.transform.tag == "Interactable"){
+			//Debug.Log ("Unsetting push lift target");
+			//target = null;
+			targets.Remove(other);
 		}
 	}
 	
