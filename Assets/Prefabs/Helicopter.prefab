@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1cfdcdd9be67243962a64e760cda27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heliHit: {fileID: 8300000, guid: 1d37eb4fdb393f64b9b9f17e2d3415ed, type: 3}
+  heliCrash: {fileID: 8300000, guid: 095c3a7e6f49e40478c321cd1a57b799, type: 3}
 --- !u!212 &21227510
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -160,6 +160,7 @@ MonoBehaviour:
   hoze: {fileID: 154828, guid: 2cc2dbc3a473f5644997d4e6cdcf397a, type: 2}
   water: {fileID: 110560, guid: 3e885b37e1fffe044bb647d97dd34c66, type: 2}
   helicopter: {fileID: 127508, guid: a30809a8ebabf60458d127eed619cdf4, type: 2}
+  pilot: {fileID: 174496, guid: f50ffb58ff900334ea3dcba72a5bd2f5, type: 2}
 --- !u!212 &21245472
 SpriteRenderer:
   m_ObjectHideFlags: 1

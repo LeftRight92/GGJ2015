@@ -7,11 +7,13 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 	private bool isBusy;
 	private GameObject waterObject;
 	private GameObject helicopterObject;
+	private GameObject pilotObject;
 
 	public AudioClip idle, freakingOut;	
 	public GameObject hoze;
 	public GameObject water;
 	public GameObject helicopter;
+	public GameObject pilot; 
 
 	// Use this for initialization
 	void Start () {
@@ -115,6 +117,9 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 		helicopterObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 3;
 		helicopterObject.transform.localScale = new Vector3 (-1, 1, 1);
 
+		HelicopterInteraction heliInteraction = helicopterObject.GetComponent<HelicopterInteraction> ();
+		heliInteraction.PlayHeliHit();
+
 		float speed = 1;
 
 		while (Mathf.Abs(helicopterObject.transform.position.y - target.y) > 0.5f &&
@@ -125,6 +130,9 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			yield return null;						
 		}
 
+		heliInteraction.PlayHeliCrash();		
+
+		// Reduce the hoze
 		while(water_sprite.transform.localScale.x > 0){				
 			//			Debug.Log ("Current scale: " + water_sprite.transform.localScale.ToString() );		
 			//			Debug.Log ("New scale: " + Vector3.Lerp(water.transform.localScale, new Vector3(2,1,1), Time.deltaTime * 10).ToString());  
@@ -135,7 +143,17 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			yield return null;			
 		}	
 
-		// Reduce the hoze
+		helicopterObject.tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(helicopterObject.transform);
+
+
+		// Spawn pilot
+		Vector3 pilotSpawn = new Vector3 (-4.16f, 1.61f, 0);
+		pilotObject = Instantiate (pilot, pilotSpawn, Quaternion.identity) as GameObject;
+		pilotObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 2;
+
+//		pilotObject.tag = "Interactable";
+//		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(pilotObject.transform);
 		// Change them to background layer?
 		
 	}
