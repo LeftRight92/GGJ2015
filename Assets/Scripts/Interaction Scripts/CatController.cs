@@ -85,7 +85,7 @@ public class CatController : MonoBehaviour, InteractableObject {
 		yield return null;
 
 		//Cat swtich to attack face
-
+		GameController.Get ("GhostCat").GetComponentInChildren<Animator> ().SetBool ("Scratch", true);
 
 		//Child crying
 		GameController.Get ("Kid").GetComponentInChildren<Animator> ().SetTrigger ("Scratched");
