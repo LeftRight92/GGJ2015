@@ -110,8 +110,10 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 
 		// Crash the copter
 		helicopterObject = Instantiate (helicopter, new Vector3 (4f, 11f, 0), Quaternion.identity) as GameObject;
-		helicopterObject.transform.Rotate (new Vector3 (60, 0, 0));
-		Vector3 target = new Vector3 (-7.3f, -2.8f, 0);
+		helicopterObject.transform.Rotate (new Vector3 (0, 0, 60));
+		Vector3 target = new Vector3 (-4.76f, -1.61f, 0);
+		helicopterObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 3;
+		helicopterObject.transform.localScale = new Vector3 (-1, 1, 1);
 
 		float speed = 1;
 

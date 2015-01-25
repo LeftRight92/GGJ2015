@@ -68,7 +68,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 127508}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Radius: 2.42000008
   m_Center: {x: -.460000008, y: -.560000002}
 --- !u!82 &8227510
