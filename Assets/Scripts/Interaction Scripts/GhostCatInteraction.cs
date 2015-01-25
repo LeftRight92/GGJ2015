@@ -5,7 +5,7 @@ public class GhostCatInteraction : MonoBehaviour, InteractableObject {
 
 	// Use this for initialization
 	void Start () {
-	
+		GameController.Register ("GhostCat",transform);
 	}
 	
 	// Update is called once per frame

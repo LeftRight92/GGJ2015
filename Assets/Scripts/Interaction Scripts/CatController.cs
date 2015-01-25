@@ -44,13 +44,14 @@ public class CatController : MonoBehaviour, InteractableObject {
 		//Spawn Cat Grave
 		Instantiate (gravePrefab, new Vector3 (2, -3, 0), Quaternion.identity);
 		tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(GameController.Get ("Cat"));
 
 		//Remove Cat
 		transform.GetComponent<SpriteRenderer> ().enabled = false;
 
-		//Spawn Cat Ghost
-		Instantiate (catGhostPrefab, new Vector3 (2, -3, 0), Quaternion.identity);
-		
+		//Bury Cat
+		StartCoroutine ("catBuriedEvent");
+
 		//End all life
 		return true;
 	}
@@ -65,6 +66,21 @@ public class CatController : MonoBehaviour, InteractableObject {
 		return true;
 	}
 
+	IEnumerator catBuriedEvent () {
 
+		//Spawn Cat Ghost
+		Instantiate (catGhostPrefab, new Vector3 (2, -3, 0), Quaternion.identity);
+		yield return null;
+		Debug.Log (GameController.Get ("GhostCat"));
+		GameController.Get ("GhostCat").GetComponentInChildren<SpriteRenderer> ().sortingOrder = 4;
+		//Play Ghost sound
+
+		//Cat Move to child face
+
+		//Cat switch to attack
+		//Play Attack sound
+		//Ghost cat becomes interactabru
+
+	}
 
 }
