@@ -58,22 +58,36 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 						cat.GetComponent<AudioSource>().Play ();
 						cat.GetComponentInChildren<Animator>().SetBool("isScratching", true);
 						GameController.Get ("Tree").transform.GetComponentInChildren<Animator>().SetBool("Shaking", true);
+
 						while(cat.transform.position.y > -3.7){
 							cat.transform.Translate(new Vector3(0,-5*Time.deltaTime,0), Space.World);
 							cat.transform.Rotate(Vector3.forward * Time.deltaTime* 120); //it's good enough
 							yield return null;
 							}
+
 						cat.transform.rotation = Quaternion.identity;
 						GameController.Get ("Tree").GetComponentInChildren<Animator>().SetBool("Shaking", false);
 						cat.GetComponentInChildren<Animator>().SetBool("isScratching", false);
 						cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
 						cat.audio.mute = true;
 						
-						//Change tree to fallen
+						//Change tree to fallen/burning
 						GameController.Get ("Tree").GetComponentInChildren<Animator>().SetTrigger("Burn");
+
+						//Kill Cat,Child,Police Officer
+						Destroy(cat.gameObject);
+						Destroy(GameController.Get ("Policeman").gameObject);
+						Destroy(GameController.Get ("Kid").gameObject);
+
+						//Superposition Tree and player
+						GameController.Get ("Tree").GetComponentInChildren<SpriteRenderer>().sortingOrder = 4;
+						player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
+						player.canControl = true;
+
+						//Instantiate Fireman
+						//Move Fireman in scene
 			
-						//Change tree to burning
-				}
+					}
 		else
 		yield return null;
 
