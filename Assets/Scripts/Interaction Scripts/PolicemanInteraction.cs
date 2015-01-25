@@ -100,6 +100,7 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		// Change car state
 		Animator carAnim = car.GetComponentInChildren<Animator>();
 		carAnim.SetTrigger ("WithCat");
+		car.GetChild (0).transform.localScale = new Vector3 (-1, 1, 1);
 
 		// Move car
 		while (car.transform.position.x > -13F) {
