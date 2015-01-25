@@ -111,7 +111,7 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 
 		// Move car
 		while (car.transform.position.x > -13F) {
-			car.transform.Translate(new Vector3(-1*Time.deltaTime,0,0));
+			car.transform.Translate(new Vector3(-3*Time.deltaTime,0,0));
 			yield return null;
 		}
 
