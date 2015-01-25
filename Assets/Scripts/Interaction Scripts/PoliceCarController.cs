@@ -48,8 +48,10 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 
 			//Set Policeman to untagged
 			//Set Car to untagged
-			GameController.Get ("PoliceCar").tag = "Untagged";
+			transform.tag = "Untagged";
+			GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);
 			GameController.Get ("Policeman").tag = "Untagged";
+			GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(GameController.Get ("Policeman"));
 
 			//Set character to uncontrollable
 			PlayerController player = GameController.Get ("Player").GetComponent<PlayerController> ();

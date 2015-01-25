@@ -32,8 +32,10 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 	
 	IEnumerator TreePushEvent(){
 		transform.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);
 		Transform kid = GameController.Get ("Kid");
 		kid.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(kid);
 		kid.GetComponentInChildren<Animator>().SetTrigger("Cry");
 		Transform cat = GameController.Get ("Cat");
 		cat.GetComponent<AudioSource>().clip = catDeath;

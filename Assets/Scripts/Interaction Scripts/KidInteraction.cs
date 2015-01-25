@@ -58,6 +58,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		isBusy = true;
 		isIdle = false;
 		GameController.Get ("Tree").tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(GameController.Get ("Tree"));
 		transform.Translate(new Vector3(0, 3.5f, 0));
 		PlayerController player = GameController.Get ("Player").GetComponent<PlayerController>();
 		Transform cat = GameController.Get ("Cat");
@@ -84,12 +85,14 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		catAnimator.SetBool ("isScratching", false);
 		transform.Translate(new Vector3(0, -3.5f, 0));
 		transform.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);
 		isBusy = false;
 		player.canControl = true;
 		Instantiate (policeCarPrefab, new Vector3 (-12, -1.2f, 0), Quaternion.identity);
 		yield return null;
 		policeCar = GameController.Get("PoliceCar");
 		policeCar.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(policeCar);
 		Debug.Log ("ASD" + policeCar);
 
 		PoliceCarController carScript = policeCar.GetComponent<PoliceCarController>();		
