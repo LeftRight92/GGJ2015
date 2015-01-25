@@ -12,7 +12,7 @@ public class PilotInteraction : MonoBehaviour, InteractableObject {
 		InvokeRepeating ("IdleSound", 0, 6);	
 	}
 
-	IEnumerator IdleSound(){
+	void IdleSound(){
 		if (isIdle) {
 			audio.clip = agony [Random.Range (0, agony.GetLength (0))];
 			audio.Play ();

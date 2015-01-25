@@ -132,10 +132,12 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 
 		float speed = 1;
 
+		Transform player = GameController.Get ("Player");
+
 		while (Mathf.Abs(helicopterObject.transform.position.y - target.y) > 0.5f &&
 		       Mathf.Abs (helicopterObject.transform.position.x - target.x) > 0.5f) {
 //			Debug.Log ("3");					
-			helicopterObject.transform.position = Vector3.MoveTowards(helicopterObject.transform.position, target, speed*Time.deltaTime);
+			helicopterObject.transform.position = Vector3.MoveTowards(helicopterObject.transform.position, player.transform.position, speed*Time.deltaTime);
 			speed += 0.5f;
 			yield return null;						
 		}
@@ -153,14 +155,14 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			yield return null;			
 		}	
 
-		helicopterObject.tag = "Interactable";
-		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(helicopterObject.transform);
+//		helicopterObject.tag = "Interactable";
+//		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(helicopterObject.transform);
 
-		Vector3 pilotSpawn = new Vector3 (-4.16f, -1.61f, 0);		
+//		Vector3 pilotSpawn = new Vector3 (-4.16f, -1.61f, 0);		
 
 		//Move the pilot up in the hierarchy
-		pilotObject.transform.parent = helicopterObject.transform.parent;
-		pilotObject.transform.position = pilotSpawn;
+//		pilotObject.transform.parent = helicopterObject.transform.parent;
+//		pilotObject.transform.position = pilotSpawn;
 
 //		pilotObject.tag = "Interactable";
 //		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(pilotObject.transform);
