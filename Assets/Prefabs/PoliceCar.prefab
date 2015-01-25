@@ -155,6 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d46c9c5c5c024e8e00c279c75a759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catDeath: {fileID: 8300000, guid: 68bc535a4ca776a49bf7fdf8e22b536f, type: 3}
+  driving: {fileID: 8300000, guid: 0154f02093547a14a8cf7153b2ba3315, type: 3}
+  stopping: {fileID: 8300000, guid: 9fa56b075feef194794e50ae77c2f454, type: 3}
+  firemanPrefab: {fileID: 145474, guid: 1d034416859c25e47aaf1f55a7a75cb3, type: 2}
 --- !u!212 &21267188
 SpriteRenderer:
   m_ObjectHideFlags: 1

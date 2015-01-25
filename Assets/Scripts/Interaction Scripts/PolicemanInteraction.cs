@@ -33,7 +33,9 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		}
 		policemanAnimator.SetBool ("Walking", false);
 		transform.tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(transform);
 		GameController.Get ("PoliceCar").tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(GameController.Get ("PoliceCar"));
 
 	}
 
@@ -51,7 +53,9 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 	IEnumerator stealCatEvent(){
 
 		isBusy = true;
-		transform.tag = "Untagged";		
+		transform.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);	
+			
 
 		// Lock player
 		PlayerController player = GameController.Get ("Player").GetComponent<PlayerController>();
@@ -90,21 +94,24 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 
 		// Destroy this guy/cat 
 
-		transform.GetChild (0).active = false;
+		transform.GetChild (0).gameObject.SetActive(false);
 		Destroy (cat.gameObject);
 
 		Transform car = GameController.Get ("PoliceCar");
 
 		car.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(car);
 
 		// Change car state
 		Animator carAnim = car.GetComponentInChildren<Animator>();
 		carAnim.SetTrigger ("WithCat");
 		car.GetChild (0).transform.localScale = new Vector3 (-1, 1, 1);
 
+		car.GetComponentInChildren<PoliceCarController> ().playDriving();
+
 		// Move car
 		while (car.transform.position.x > -13F) {
-			car.transform.Translate(new Vector3(-5*Time.deltaTime,0,0));
+			car.transform.Translate(new Vector3(-1*Time.deltaTime,0,0));
 			yield return null;
 		}
 

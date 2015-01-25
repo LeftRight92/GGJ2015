@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PushLiftCollider : MonoBehaviour {
 
-	public Transform target;
+	//reimpliment as array
+	//implement a 'notifyDestroyed()
+	//public Transform target;
+	public List<Transform> targets = new List<Transform>();
 
 	// Use this for initialization
 	void Start () {
@@ -16,24 +20,39 @@ public class PushLiftCollider : MonoBehaviour {
 	}
 
 	public Transform getTarget() {
-		return target;
+		return targets.FindLast(delegate(Transform t){ return t; });
 	}
 
+	public void becomeUninteractable(Transform other){
+		if(targets.Contains(other)){
+			targets.Remove (other);
+		}
+	}
+	
+	public void becomeInteractable(Transform other){
+		if(other.tag == "Interactable"){
+			if(gameObject.collider2D.bounds.Intersects(other.collider2D.bounds)){
+				targets.Add (other.transform);
+			}
+		}
+	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log ("Entering "+other.transform);
+		//Debug.Log ("Entering "+other.transform);
 		if(other.transform.tag == "Interactable"){
-			Debug.Log ("Setting current push lift target to "+other.transform);
-			target = other.transform;
+			//Debug.Log ("Setting current push lift target to "+other.transform);
+			//target = other.transform;
+			targets.Add(other.transform);
 		}
 	
 	}
 	
 	void OnTriggerExit2D(Collider2D other){
-		Debug.Log ("Exiting" +other.transform);
-		if(other.transform.tag == "Interactable" && other.transform == target){
-			Debug.Log ("Unsetting push lift target");
-			target = null;
+		//Debug.Log ("Exiting" +other.transform);
+		if(other.transform.tag == "Interactable"){
+			//Debug.Log ("Unsetting push lift target");
+			//target = null;
+			targets.Remove(other.transform);
 		}
 	}
 	

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TreeInteraction : MonoBehaviour, InteractableObject {
 
+	public AudioClip[] crash;
 	public AudioClip catDeath;
 
 	// Use this for initialization
@@ -13,6 +14,11 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void playCrash(){
+		audio.clip = crash [Random.Range(0, crash.GetLength (0))];
+		audio.Play ();
 	}
 	
 	public bool onLift(){
@@ -26,8 +32,10 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 	
 	IEnumerator TreePushEvent(){
 		transform.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);
 		Transform kid = GameController.Get ("Kid");
 		kid.tag = "Untagged";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(kid);
 		kid.GetComponentInChildren<Animator>().SetTrigger("Cry");
 		Transform cat = GameController.Get ("Cat");
 		cat.GetComponent<AudioSource>().clip = catDeath;
