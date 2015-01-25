@@ -8,8 +8,8 @@ AnimatorController:
   m_Name: TreeController
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: Falling
-    m_Type: 9
+  - m_Name: Shaking
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -39,7 +39,27 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Falling
+    m_ConditionEvent: Shaking
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110178356
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 0}
+  m_DstState: {fileID: 110210294}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: Shaking
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
@@ -91,15 +111,16 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110200194}
-      second: []
+      first: {fileID: 0}
+      second:
+      - {fileID: 110153648}
+      - {fileID: 110178356}
     data:
       first: {fileID: 110210294}
       second: []
     data:
-      first: {fileID: 0}
-      second:
-      - {fileID: 110153648}
+      first: {fileID: 110200194}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 12, y: -12, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
