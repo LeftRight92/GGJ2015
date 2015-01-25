@@ -55,7 +55,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 
 	IEnumerator kidLiftedEvent()
 	{
-		Destroy (GameObject.FindWithTag("TutCanvas"));
+		GameObject.FindWithTag("TutCanvas").GetComponent<FadeCanvas>().FadeOut();
 		isBusy = true;
 		isIdle = false;
 		GameController.Get ("Tree").tag = "Untagged";
