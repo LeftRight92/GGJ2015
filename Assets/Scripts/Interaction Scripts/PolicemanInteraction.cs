@@ -26,6 +26,7 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		}
 		policemanAnimator.SetBool ("Walking", false);
 		transform.tag = "Interactable";
+		GameController.Get ("PoliceCar").tag = "Interactable";
 
 	}
 

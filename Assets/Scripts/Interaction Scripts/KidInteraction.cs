@@ -57,7 +57,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	{
 		isBusy = true;
 		isIdle = false;
-
+		GameController.Get ("Tree").tag = "Untagged";
 		transform.Translate(new Vector3(0, 3.5f, 0));
 		PlayerController player = GameController.Get ("Player").GetComponent<PlayerController>();
 		catAnimator = GameController.Get ("Cat").GetComponent<Animator> ();
