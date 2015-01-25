@@ -8,7 +8,7 @@ public class CatController : MonoBehaviour, InteractableObject {
 	private bool isBusy;
 	public GameObject gravePrefab;
 	public GameObject catGhostPrefab;
-	public AudioClip ghostSpawn, ghostAttack;
+
 
 	// Use this for initialization
 	void Start () {
@@ -70,15 +70,14 @@ public class CatController : MonoBehaviour, InteractableObject {
 	IEnumerator catBuriedEvent () {
 
 		//Spawn Cat Ghost
-		Instantiate (catGhostPrefab, new Vector3 (2, -3, 0), Quaternion.identity);
+		Instantiate (catGhostPrefab, new Vector3 (2, -1.96f, 0), Quaternion.identity);
 		yield return null;
 		Debug.Log (GameController.Get ("GhostCat"));
 		GameController.Get ("GhostCat").GetComponentInChildren<SpriteRenderer> ().sortingOrder = 4;
 
 		//Play Ghost sound
-		transform.GetComponent<AudioSource>().clip = ghostSpawn;
-		transform.GetComponent<AudioSource>().Play ();
-		yield return WaitForSeconds (6.5f);
+
+		yield return new WaitForSeconds (6.5f);
 
 		//Cat Move to child face
 

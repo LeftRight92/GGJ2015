@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GhostCatInteraction : MonoBehaviour, InteractableObject {
 
+	public AudioClip ghostSpawn, ghostAttack;
 	// Use this for initialization
 	void Start () {
 		GameController.Register ("GhostCat",transform);
@@ -22,4 +23,7 @@ public class GhostCatInteraction : MonoBehaviour, InteractableObject {
 	
 		return true;
 	}
+
+
+
 }
