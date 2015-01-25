@@ -47,12 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\CatController.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\InteractableObject.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\KidInteraction.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\ObjectTest.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\PoliceCarController.cs" />
      <Compile Include="Assets\Scripts\Interaction Scripts\PolicemanInteraction.cs" />
+     <Compile Include="Assets\Scripts\Interaction Scripts\TreeInteraction.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PushLiftCollider.cs" />

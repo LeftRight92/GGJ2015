@@ -5,7 +5,6 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 
 	private Animator policemanAnimator;
 	private bool isBusy; //Used to check whether he's in the middle of stuff or not for idle sounds
-	private bool isHappy; //If isn't busy and is happy then it has the cat and hence should move to the car
 	private bool isInteractable;
 	public AudioClip[] idle, lifted, happyIdle;
 
@@ -14,7 +13,6 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		GameController.Register ("Policeman", transform);
 		policemanAnimator = transform.GetComponentInChildren<Animator>();
 		isBusy = false;
-		isHappy = false;
 		StartCoroutine ("moveToTree");
 	}
 
@@ -71,7 +69,6 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 
 		// goes down on the ground
 		transform.Translate (new Vector3 (0, -3.5f, 0));
-		isHappy = true;
 		player.canControl = true;			
 		 
 		isBusy = false;
@@ -89,9 +86,33 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		transform.GetChild (0).active = false;
 		Destroy (cat.gameObject);
 
+		Transform car = GameController.Get ("PoliceCar");
+
+		car.tag = "Untagged";
+
 		// Change car state
+		Animator carAnim = car.GetComponentInChildren<Animator>();
+		carAnim.SetTrigger ("WithCat");
+
 		// Move car
-		// make kid kill player
+		while (car.transform.position.x > -13F) {
+			car.transform.Translate(new Vector3(-5*Time.deltaTime,0,0));
+			yield return null;
+		}
+
+		Destroy (car.gameObject);
+
+		Transform kid = GameController.Get("Kid");
+		Animator kidAnim = kid.GetComponentInChildren<Animator>();
+		kidAnim.SetTrigger ("Angry");
+
+		KidInteraction kidScript = kid.GetComponent<KidInteraction>();
+		kidScript.setBusy (true);
+		kidScript.playAngrySound ();
+
+		yield return new WaitForSeconds (1.5f);
+		Application.LoadLevel ("game_over");
+		//GameOver
 		
 	}
 
