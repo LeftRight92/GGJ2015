@@ -81,6 +81,8 @@ public class CatController : MonoBehaviour, InteractableObject {
 		yield return new WaitForSeconds (6.5f);
 		GameController.Get ("GhostCat").GetComponent<AudioSource> ().clip = attack;
 		GameController.Get ("GhostCat").GetComponent<AudioSource> ().loop = true;
+		GameController.Get ("GhostCat").GetComponent<AudioSource> ().Play ();
+		yield return null;
 		//Cat Move to child face
 
 		//Cat switch to attack
