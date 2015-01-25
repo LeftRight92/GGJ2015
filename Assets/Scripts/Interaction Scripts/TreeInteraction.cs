@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TreeInteraction : MonoBehaviour, InteractableObject {
 
+	public AudioClip catDeath;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -28,6 +30,8 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 		kid.tag = "Untagged";
 		kid.GetComponentInChildren<Animator>().SetTrigger("Cry");
 		Transform cat = GameController.Get ("Cat");
+		cat.GetComponent<AudioSource>().clip = catDeath;
+		cat.GetComponent<AudioSource>().Play ();
 		cat.GetComponentInChildren<Animator>().SetBool("isScratching", true);
 		transform.GetComponentInChildren<Animator>().SetBool("Shaking", true);
 		while(cat.transform.position.y > -3.7){
@@ -36,6 +40,7 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 			yield return null;
 		}
 		cat.transform.rotation = Quaternion.identity;
+		transform.GetComponentInChildren<Animator>().SetBool("Shaking", false);
 		cat.GetComponentInChildren<Animator>().SetBool("isScratching", false);
 		cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
 		cat.audio.mute = true;

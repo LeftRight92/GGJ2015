@@ -23,6 +23,10 @@ public class CatController : MonoBehaviour {
 		
 	}
 	
+	void setBusy(bool busy){
+		isBusy = busy;
+	}
+	
 	// Update is called once per frame
 	void Update () {
 	
