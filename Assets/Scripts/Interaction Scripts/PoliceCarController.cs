@@ -64,12 +64,14 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 							yield return null;
 							}
 						cat.transform.rotation = Quaternion.identity;
-						GameController.Get ("Tree").transform.GetComponentInChildren<Animator>().SetBool("Shaking", false);
+						GameController.Get ("Tree").GetComponentInChildren<Animator>().SetBool("Shaking", false);
 						cat.GetComponentInChildren<Animator>().SetBool("isScratching", false);
 						cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
 						cat.audio.mute = true;
 						
 						//Change tree to fallen
+						GameController.Get ("Tree").GetComponentInChildren<Animator>().SetTrigger("Burn");
+			
 						//Change tree to burning
 				}
 		else
