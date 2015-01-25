@@ -90,7 +90,7 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 
 		// Destroy this guy/cat 
 
-		transform.GetChild (0).active = false;
+		transform.GetChild (0).gameObject.SetActive(false);
 		Destroy (cat.gameObject);
 
 		Transform car = GameController.Get ("PoliceCar");

@@ -45,61 +45,67 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 
 		if (facingRight) {
 
-						//Set Policeman to untagged
-						//Set Car to untagged
-						GameController.Get ("PoliceCar").tag = "Untagged";
-						GameController.Get ("Policeman").tag = "Untagged";
+			//Set Policeman to untagged
+			//Set Car to untagged
+			GameController.Get ("PoliceCar").tag = "Untagged";
+			GameController.Get ("Policeman").tag = "Untagged";
 
-						//Set character to uncontrollable
-						PlayerController player = GameController.Get ("Player").GetComponent<PlayerController> ();
-						player.canControl = false;
-						GameController.Get ("PoliceCar").GetComponentInChildren<SpriteRenderer>().sortingOrder = 4;
-						//Move Car To Tree
-						while (GameController.Get ("PoliceCar").position.x < 1) {
-								GameController.Get ("PoliceCar").transform.Translate (Time.deltaTime, 0, 0);
-								yield return null;
-						}
-						while (GameController.Get ("PoliceCar").position.x > 0.9) {
-								GameController.Get ("PoliceCar").transform.Translate (-Time.deltaTime, 0, 0);
-								yield return null;
-						}
+			//Set character to uncontrollable
+			PlayerController player = GameController.Get ("Player").GetComponent<PlayerController> ();
+			player.canControl = false;
+			GameController.Get ("PoliceCar").GetComponentInChildren<SpriteRenderer>().sortingOrder = 4;
+			//Move Car To Tree
+			while (GameController.Get ("PoliceCar").position.x < 1) {
+					GameController.Get ("PoliceCar").transform.Translate (Time.deltaTime, 0, 0);
+					yield return null;
+			}
+			while (GameController.Get ("PoliceCar").position.x > 0.9) {
+					GameController.Get ("PoliceCar").transform.Translate (-Time.deltaTime, 0, 0);
+					yield return null;
+			}
 
-						//Change cat to fallen/dead
-						Transform cat = GameController.Get ("Cat");
-						cat.GetComponent<AudioSource>().clip = catDeath;
-						cat.GetComponent<AudioSource>().Play ();
-						cat.GetComponentInChildren<Animator>().SetBool("isScratching", true);
-						GameController.Get ("Tree").transform.GetComponentInChildren<Animator>().SetBool("Shaking", true);
+			//Change cat to fallen/dead
+			Transform cat = GameController.Get ("Cat");
+			cat.GetComponent<AudioSource>().clip = catDeath;
+			cat.GetComponent<AudioSource>().Play ();
+			cat.GetComponentInChildren<Animator>().SetBool("isScratching", true);
+			GameController.Get ("Tree").transform.GetComponentInChildren<Animator>().SetBool("Shaking", true);
 
-						while(cat.transform.position.y > -3.7){
-							cat.transform.Translate(new Vector3(0,-5*Time.deltaTime,0), Space.World);
-							cat.transform.Rotate(Vector3.forward * Time.deltaTime* 120); //it's good enough
-							yield return null;
-							}
+			cat.GetComponentInChildren<SpriteRenderer>().sortingOrder = 7;
 
-						cat.transform.rotation = Quaternion.identity;
-						GameController.Get ("Tree").GetComponentInChildren<Animator>().SetBool("Shaking", false);
-						cat.GetComponentInChildren<Animator>().SetBool("isScratching", false);
-						cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
-						cat.audio.mute = true;
-						
-						//Change tree to fallen/burning
-						GameController.Get ("Tree").GetComponentInChildren<Animator>().SetTrigger("Burn");
+			while(cat.transform.position.y > -3.7){
+				cat.transform.Translate(new Vector3(0,-5*Time.deltaTime,0), Space.World);
+				cat.transform.Rotate(Vector3.forward * Time.deltaTime* 120); //it's good enough
+				yield return null;
+				}
 
-						//Kill Cat,Child,Police Officer
-						Destroy(cat.gameObject);
-						Destroy(GameController.Get ("Policeman").gameObject);
-						Destroy(GameController.Get ("Kid").gameObject);
-
-						//Superposition Tree and player
-						GameController.Get ("Tree").GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
-						player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 6;
-						player.canControl = true;
-
-						//Instantiate Fireman
-						//Move Fireman in scene
+			cat.transform.rotation = Quaternion.identity;
+			GameController.Get ("Tree").GetComponentInChildren<Animator>().SetBool("Shaking", false);
+			cat.GetComponentInChildren<Animator>().SetBool("isScratching", false);
+			cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
+			cat.audio.mute = true;
 			
-					}
+			//Change tree to fallen/burning
+			Transform tree = GameController.Get ("Tree");
+			TreeInteraction treeScript = tree.GetComponent<TreeInteraction>();
+			treeScript.playCrash();
+			tree.GetComponentInChildren<Animator>().SetTrigger("Burn");
+
+
+			//Kill Cat,Child,Police Officer
+			Destroy(cat.gameObject);
+			Destroy(GameController.Get ("Policeman").gameObject);
+			Destroy(GameController.Get ("Kid").gameObject);
+
+			//Superposition Tree and player
+			GameController.Get ("Tree").GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
+			player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 6;
+			player.canControl = true;
+
+			//Instantiate Fireman
+			//Move Fireman in scene
+
+		}
 		else
 		yield return null;
 
