@@ -162,7 +162,6 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 		pilotObject.transform.parent = helicopterObject.transform.parent;
 		pilotObject.transform.position = pilotSpawn;
 
-
 //		pilotObject.tag = "Interactable";
 //		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(pilotObject.transform);
 		// Change them to background layer?
