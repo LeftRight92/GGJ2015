@@ -41,7 +41,7 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 						//Set character to uncontrollable
 						PlayerController player = GameController.Get ("Player").GetComponent<PlayerController> ();
 						player.canControl = false;
-
+			GameController.Get ("PoliceCar").GetComponentInChildren<SpriteRenderer>().sortingOrder = 4;
 						//Move Car To Tree
 						while (GameController.Get ("PoliceCar").position.x < 1) {
 								GameController.Get ("PoliceCar").transform.Translate (Time.deltaTime, 0, 0);
@@ -80,8 +80,8 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 						Destroy(GameController.Get ("Kid").gameObject);
 
 						//Superposition Tree and player
-						GameController.Get ("Tree").GetComponentInChildren<SpriteRenderer>().sortingOrder = 4;
-						player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
+						GameController.Get ("Tree").GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
+						player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 6;
 						player.canControl = true;
 
 						//Instantiate Fireman
