@@ -25,6 +25,10 @@ public static class GameController {
 		return null;
 	}
 	
+	public static void ClearVars(){
+		objects = new Dictionary<string, Transform>();
+	}
+	
 	public static void Restart(int mode){
 		objects = new Dictionary<string, Transform>();
 		Application.LoadLevel("gamestart");
