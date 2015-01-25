@@ -52,17 +52,20 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		transform.Translate(new Vector3(0, 3.5f, 0));
 		PlayerController player = GameController.Get ("Player").GetComponent<PlayerController>();
 		catAnimator = GameController.Get ("Cat").GetComponent<Animator> ();
+
 		player.canControl = false;
 		kidAnimator.SetTrigger ("Reach");
 		audio.clip = lifted[Random.Range (0,lifted.GetLength (0))];
 		audio.loop = false;
 		audio.Play ();
 		yield return new WaitForSeconds(1);
+
 		catAnimator.SetBool ("isScratching", true);
 		audio.clip = hurt[Random.Range (0,hurt.GetLength (0))];
 		audio.Play ();
 		//Animations
 		yield return new WaitForSeconds(2);
+
 		kidAnimator.SetTrigger ("Scratched");
 		catAnimator.SetBool ("isScratching", false);
 		transform.Translate(new Vector3(0, -3.5f, 0));
@@ -72,6 +75,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		Instantiate (policeCarPrefab, new Vector3 (-12, -1.2f, 0), Quaternion.identity);
 		yield return null;
 		policeCar = GameController.Get("PoliceCar");
+		policeCar.tag = "Untagged";
 		Debug.Log ("ASD" + policeCar);
 		while (policeCar.position.x < -3.35f) {
 						policeCar.transform.Translate (new Vector3 (Time.deltaTime, 0, 0));
@@ -81,6 +85,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		yield return new WaitForSeconds (1);
 		policeCar.GetComponentInChildren<Animator> ().SetTrigger ("Empty");
 		Instantiate (policeManPrefab, new Vector3 (-3, -1.9f, 0), Quaternion.identity);
+
 	}
 
 

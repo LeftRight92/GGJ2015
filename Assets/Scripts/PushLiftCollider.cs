@@ -31,7 +31,7 @@ public class PushLiftCollider : MonoBehaviour {
 	
 	void OnTriggerExit2D(Collider2D other){
 		Debug.Log ("Exiting" +other.transform);
-		if(other.transform.tag == "Interactable"){
+		if(other.transform.tag == "Interactable" && other.transform == target){
 			Debug.Log ("Unsetting push lift target");
 			target = null;
 		}
