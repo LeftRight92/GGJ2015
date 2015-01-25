@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 439048}
   - 212: {fileID: 21239048}
   - 95: {fileID: 9539048}
+  - 114: {fileID: 11461936}
   m_Layer: 0
   m_Name: Pilot 1
   m_TagString: Untagged
@@ -44,6 +45,21 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11461936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2af62f8f256c74aa7462e8abd3a845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agony:
+  - {fileID: 8300000, guid: 6e996cfaad498cc4c8457ce3e5519246, type: 3}
+  - {fileID: 8300000, guid: 8780c4540d713784e8d46ef0e4585369, type: 3}
+  - {fileID: 8300000, guid: ee0b481bcd3fe6e4a8044d0cded3847a, type: 3}
 --- !u!212 &21239048
 SpriteRenderer:
   m_ObjectHideFlags: 1
