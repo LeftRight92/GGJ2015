@@ -6,6 +6,7 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 	private PlayerController player;
 	private bool facingRight;
 	public AudioClip catDeath, driving, stopping;
+	public GameObject firemanPrefab;
 
 	public void playDriving(){
 		audio.clip = driving;
@@ -98,12 +99,18 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 			Destroy(GameController.Get ("Kid").gameObject);
 
 			//Superposition Tree and player
-			GameController.Get ("Tree").GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
-			player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 6;
+			GameController.Get ("PoliceCar").GetComponentInChildren<SpriteRenderer>().sortingOrder = 1;			
+			GameController.Get ("Tree").GetComponentInChildren<SpriteRenderer>().sortingOrder = 2;
+			player.GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
 			player.canControl = true;
 
 			//Instantiate Fireman
+			Instantiate (firemanPrefab, new Vector3 (12, -1.2f, 0), Quaternion.identity);
+			GameController.Get("fireman").GetComponentInChildren<SpriteRenderer>().sortingOrder = 3;
+
 			//Move Fireman in scene
+			//Is done in the Fireman script Start()
+//			Animator firemanAnimator = GameController.Get("Fireman").transform.GetComponentInChildren<Animator>();
 
 		}
 		else
