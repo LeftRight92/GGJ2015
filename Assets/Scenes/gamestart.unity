@@ -654,7 +654,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Left Click
+  m_Text: 'Press J
 
     to Push'
 --- !u!222 &889564912
@@ -1089,7 +1089,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Right Click
+  m_Text: 'Press L
 
     to Lift'
 --- !u!222 &1242453437
