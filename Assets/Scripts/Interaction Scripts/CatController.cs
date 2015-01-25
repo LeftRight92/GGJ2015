@@ -4,6 +4,7 @@ using System.Collections;
 public class CatController : MonoBehaviour {
 
 	public AudioClip[] idle;
+	public AudioClip attack;
 	private bool isBusy;
 
 	// Use this for initialization
@@ -12,7 +13,11 @@ public class CatController : MonoBehaviour {
 		InvokeRepeating ("IdleSound", 0, 4);
 		isBusy = false;
 	}
-	
+
+	public void playAttack(){
+		audio.clip = attack;
+		audio.Play ();
+	}
 	
 	void IdleSound(){
 
@@ -23,7 +28,7 @@ public class CatController : MonoBehaviour {
 		
 	}
 	
-	void setBusy(bool busy){
+	public void setBusy(bool busy){
 		isBusy = busy;
 	}
 	

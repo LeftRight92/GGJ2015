@@ -5,7 +5,19 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 
 	private PlayerController player;
 	private bool facingRight;
-	public AudioClip catDeath;
+	public AudioClip catDeath, driving, stopping;
+
+	public void playDriving(){
+		audio.clip = driving;
+		audio.loop = true;
+		audio.Play ();
+	}
+
+	public void playStopping(){
+		audio.clip = stopping;
+		audio.loop = false;
+		audio.Play ();
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -41,7 +53,7 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 						//Set character to uncontrollable
 						PlayerController player = GameController.Get ("Player").GetComponent<PlayerController> ();
 						player.canControl = false;
-			GameController.Get ("PoliceCar").GetComponentInChildren<SpriteRenderer>().sortingOrder = 4;
+						GameController.Get ("PoliceCar").GetComponentInChildren<SpriteRenderer>().sortingOrder = 4;
 						//Move Car To Tree
 						while (GameController.Get ("PoliceCar").position.x < 1) {
 								GameController.Get ("PoliceCar").transform.Translate (Time.deltaTime, 0, 0);

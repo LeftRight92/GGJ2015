@@ -60,7 +60,8 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		GameController.Get ("Tree").tag = "Untagged";
 		transform.Translate(new Vector3(0, 3.5f, 0));
 		PlayerController player = GameController.Get ("Player").GetComponent<PlayerController>();
-		catAnimator = GameController.Get ("Cat").GetComponent<Animator> ();
+		Transform cat = GameController.Get ("Cat");
+		catAnimator = cat.GetComponent<Animator> ();
 
 		player.canControl = false;
 		kidAnimator.SetTrigger ("Reach");
@@ -69,11 +70,15 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		audio.Play ();
 		yield return new WaitForSeconds(1);
 
+		CatController catScript = cat.GetComponent<CatController> ();
+		catScript.setBusy (true);
+		catScript.playAttack ();
 		catAnimator.SetBool ("isScratching", true);
 		audio.clip = hurt[Random.Range (0,hurt.GetLength (0))];
 		audio.Play ();
 		//Animations
 		yield return new WaitForSeconds(2);
+		catScript.setBusy (false);
 
 		kidAnimator.SetTrigger ("Scratched");
 		catAnimator.SetBool ("isScratching", false);
@@ -86,12 +91,22 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 		policeCar = GameController.Get("PoliceCar");
 		policeCar.tag = "Untagged";
 		Debug.Log ("ASD" + policeCar);
+
+		PoliceCarController carScript = policeCar.GetComponent<PoliceCarController>();		
+		carScript.playDriving ();
+		Debug.Log ("YOYOYOYO");
+
 		while (policeCar.position.x < -3.35f) {
 						policeCar.transform.Translate (new Vector3 (Time.deltaTime, 0, 0));
 				yield return null;
 				}
 
+		carScript.playStopping ();		
+		Debug.Log ("YOYOYOYO");
+		
+
 		yield return new WaitForSeconds (1);
+
 		policeCar.GetComponentInChildren<Animator> ().SetTrigger ("Empty");
 		Instantiate (policeManPrefab, new Vector3 (-3, -1.9f, 0), Quaternion.identity);
 

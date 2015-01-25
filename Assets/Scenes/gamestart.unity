@@ -356,6 +356,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0c0673260718563408a813850bec8aaa, type: 3}
   - {fileID: 8300000, guid: 5df76d6c3ee767a4ab311169cadf02bd, type: 3}
   - {fileID: 8300000, guid: 9ea2b1dedd8936846897d7ae4b70fbc4, type: 3}
+  attack: {fileID: 8300000, guid: 073cf975315bebd45a8f4bd23c7963b9, type: 3}
 --- !u!95 &522046115
 Animator:
   serializedVersion: 3
@@ -844,7 +845,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2220026b337694b4bbe5d40d61f75da2, type: 3}
   - {fileID: 8300000, guid: 54ecb4ad9765ae24592d9c65c016e26c, type: 3}
   - {fileID: 8300000, guid: f2feb5a9e6457ed4d95f2342f8c31932, type: 3}
-  monster: []
+  monster:
+  - {fileID: 8300000, guid: ff4a41ea231ca5343bd088fc5cab192b, type: 3}
+  - {fileID: 8300000, guid: 62403e7ca4ef82b44ab3a0d6db9c38ce, type: 3}
+  - {fileID: 8300000, guid: 67ac835be8150a041a758723e3011c5b, type: 3}
 --- !u!82 &1143135301
 AudioSource:
   m_ObjectHideFlags: 0
