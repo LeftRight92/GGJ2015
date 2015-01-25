@@ -34,7 +34,10 @@ public class GhostCatInteraction : MonoBehaviour, InteractableObject {
 		return true;
 	}
 
+
+
 	IEnumerator goingToHeaven(){
+		GameController.Get ("Player").GetComponentInChildren<Rigidbody2D> ().gravityScale = 0;
 		while (GameController.Get ("Player").transform.position.y < 5) {
 			GameController.Get ("Player").Translate(new Vector3(0, 2*Time.deltaTime, 0));
 			yield return null;
