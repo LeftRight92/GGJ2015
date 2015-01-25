@@ -15,6 +15,6 @@ public class GameOverScript : MonoBehaviour {
 
 	void onRestartClick () {
 		GameController.clearState();
-		Application.LoadLevel ("gamestart"); 
+		Application.LoadLevel ("menu"); 
 	}
 }
