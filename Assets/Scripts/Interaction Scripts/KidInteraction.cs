@@ -7,18 +7,28 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	private Animator catAnimator;
 	private bool isIdle; //If is not idle, then is hurt (when considering the new sound in looping
 	private bool isBusy; //Used to check if the idle sounds can be played
+	private bool isAngry;
 	public GameObject policeCarPrefab;
 	public GameObject policeManPrefab;
 	private Transform policeCar;
-	public AudioClip[] pushed, lifted, idle, satan, hurt;
+	public AudioClip[] pushed, lifted, idle, satan, hurt, monster;
 
 	// Use this for initialization
 	void Start () {
+		GameController.Register ("Kid", transform);		
 		kidAnimator = transform.GetComponentInChildren<Animator>();
 		InvokeRepeating ("IdleSound", 0, 6);
 		isIdle = true;
 	}
 
+	public void setBusy(bool busy){
+		isBusy = busy;
+	}
+
+	public void playAngrySound(){
+		audio.clip = monster[Random.Range (0,monster.GetLength (0))];
+		audio.Play ();
+	}
 
 	void IdleSound(){
 		if (!isBusy) {
@@ -28,7 +38,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 						} else {
 								audio.clip = hurt [Random.Range (0, hurt.GetLength (0))];
 								audio.Play ();
-						}
+						} 
 				}
 
 	}
