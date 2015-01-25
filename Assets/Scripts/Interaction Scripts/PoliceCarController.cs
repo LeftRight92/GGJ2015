@@ -35,7 +35,6 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 		//Start Push Car event
 		StartCoroutine ("PushCarEvent");
 		return facingRight;
-
 	}
 
 	public bool onLift () {
@@ -51,7 +50,7 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 			transform.tag = "Untagged";
 			GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);
 			GameController.Get ("Policeman").tag = "Untagged";
-			GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(GameController.Get ("Policeman"));
+			GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(GameController.Get ("Policeman"));
 
 			//Set character to uncontrollable
 			PlayerController player = GameController.Get ("Player").GetComponent<PlayerController> ();
