@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idle: {fileID: 8300000, guid: b5550e20544c50e45970502c14348337, type: 3}
+  freakingOut: {fileID: 8300000, guid: 545ef4a714838ca409a2fef0ca19a6b4, type: 3}
   hoze: {fileID: 154828, guid: 2cc2dbc3a473f5644997d4e6cdcf397a, type: 2}
   water: {fileID: 110560, guid: 3e885b37e1fffe044bb647d97dd34c66, type: 2}
   helicopter: {fileID: 174496, guid: f50ffb58ff900334ea3dcba72a5bd2f5, type: 2}
