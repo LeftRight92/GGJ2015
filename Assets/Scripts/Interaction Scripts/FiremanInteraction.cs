@@ -71,8 +71,35 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 	}
 	
 	public bool onLift(){
-	
+
+		StartCoroutine ("FallOverAndDie");
 		return true;
+	}
+
+	IEnumerator FallOverAndDie(){
+		//Fall over into the fire
+
+		//Lift the fireman and lock above player
+		Transform player = GameController.Get ("Player");
+		PlayerController playerController = player.GetComponent<PlayerController> ();
+		playerController.canControl = false;
+		transform.Translate (new Vector3(0, 3.5f, 0));
+		transform.parent = player;
+
+		//Rotate counter-clockwise 90 degrees
+		while(player.transform.rotation.eulerAngles.z < 90){
+
+			player.transform.Rotate(Vector3.forward * Time.deltaTime* 120); //it's good enough
+			yield return null;
+
+		}
+		
+		//Put some fire on
+		
+		//Wait and you ded
+		yield return new WaitForSeconds (1);
+		Application.LoadLevel ("game_over");
+
 	}
 	
 		//GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeUninteractable(transform);
