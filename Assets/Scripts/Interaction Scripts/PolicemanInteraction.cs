@@ -5,7 +5,7 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 
 	private Animator policemanAnimator;
 	private bool isBusy; //Used to check whether he's in the middle of stuff or not for idle sounds
-	private bool isInteractable;
+	private float x_threshold = 0.1f; //The threshold after which the kid stops chasing
 	public AudioClip[] idle, lifted, happyIdle;
 
 	// Use this for initialization
@@ -14,8 +14,15 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		policemanAnimator = transform.GetComponentInChildren<Animator>();
 		isBusy = false;
 		StartCoroutine ("moveToTree");
+		InvokeRepeating ("IdleSound", 0, 2);		
 	}
 
+	void IdleSound(){
+		if (!isBusy) {
+			audio.clip = idle[Random.Range (0,idle.GetLength (0))];
+			audio.Play ();
+		}
+	}
 	// -6 -> 2.6
 	IEnumerator moveToTree(){
 
@@ -72,7 +79,6 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		transform.Translate (new Vector3 (0, -3.5f, 0));
 		player.canControl = true;			
 		 
-		isBusy = false;
 
 		//Move to car
 				
@@ -111,9 +117,28 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		kidScript.setBusy (true);
 		kidScript.playAngrySound ();
 
+		int tick = 0;
+
+		while (tick<15) {
+
+			if (Mathf.Abs(kid.transform.position.x - player.transform.position.x) > x_threshold) {
+				tick++;
+			}
+
+			Vector3 playerPos = player.transform.position;
+			Vector3 target = new Vector3(playerPos.x, playerPos.y + 1f, playerPos.z);
+
+			kid.transform.position = Vector3.Lerp (kid.transform.position, target, 10 * Time.deltaTime);
+			yield return null;
+		}
+
+		player.GetComponentInChildren<Animator> ().SetTrigger("Dead");
+		player.canControl = false;
 		yield return new WaitForSeconds (1.5f);
+
+		isBusy = false;	
+
 		Application.LoadLevel ("game_over");
-		//GameOver
 		
 	}
 
