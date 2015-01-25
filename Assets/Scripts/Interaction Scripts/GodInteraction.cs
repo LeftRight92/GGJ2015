@@ -5,11 +5,12 @@ public class GodInteraction : MonoBehaviour, InteractableObject {
 
 	// Use this for initialization
 	void Start () {
+		GameController.clearState ();
 		StartCoroutine ("youDed");
 	}
 
 	IEnumerator youDed() {
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (4);
 		Application.LoadLevel ("game_over");
 		}
 
@@ -18,8 +19,7 @@ public class GodInteraction : MonoBehaviour, InteractableObject {
 	
 	}
 	
-	public bool onPush(bool facingRight){
-	
+	public bool onPush(bool facingRight){	
 		return false;
 	}
 	
