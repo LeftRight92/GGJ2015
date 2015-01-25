@@ -79,10 +79,21 @@ public class CatController : MonoBehaviour, InteractableObject {
 		//Play Ghost sound
 
 		yield return new WaitForSeconds (6.5f);
+
+		//Play Attack sound
 		GameController.Get ("GhostCat").GetComponent<AudioSource> ().clip = attack;
 		GameController.Get ("GhostCat").GetComponent<AudioSource> ().loop = true;
 		GameController.Get ("GhostCat").GetComponent<AudioSource> ().Play ();
 		yield return null;
+
+		//Cat Move To Kid
+		while (GameController.Get ("GhostCat").position.x > 1.38 || GameController.Get ("GhostCat").position.y < -1.12) {
+			if 	(GameController.Get ("GhostCat").position.x > 1.38)
+				GameController.Get ("GhostCat").Translate(new Vector3(-2*Time.deltaTime, 0, 0));
+			if 	(GameController.Get ("GhostCat").position.y < -1.12)
+				GameController.Get ("GhostCat").Translate(new Vector3(0, 2*Time.deltaTime, 0));
+			yield return null;
+		}
 
 		//Cat swtich to attack face
 		GameController.Get ("GhostCat").GetComponentInChildren<Animator> ().SetBool ("Scratch", true);
@@ -91,8 +102,9 @@ public class CatController : MonoBehaviour, InteractableObject {
 		GameController.Get ("Kid").GetComponentInChildren<Animator> ().SetTrigger ("Scratched");
 		GameController.Get ("Kid").GetComponentInChildren<KidInteraction> ().setIdle (false);
 
-		//Play Attack sound
 		//Ghost cat becomes interactabru
+		GameController.Get ("GhostCat").tag = "Interactable";
+		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(GameController.Get ("GhostCat"));
 
 	}
 
