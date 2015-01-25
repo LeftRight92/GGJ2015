@@ -7,7 +7,7 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 
 	// Use this for initialization
 	void Start () {
-	
+		GameController.Register("Tree", transform);
 	}
 	
 	// Update is called once per frame
