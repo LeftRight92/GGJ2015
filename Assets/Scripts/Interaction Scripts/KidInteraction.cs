@@ -10,15 +10,24 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	public GameObject policeCarPrefab;
 	public GameObject policeManPrefab;
 	private Transform policeCar;
-	public AudioClip[] pushed, lifted, idle, satan, hurt;
+	public AudioClip[] pushed, lifted, idle, satan, hurt, monster;
 
 	// Use this for initialization
 	void Start () {
+		GameController.Register ("Kid", transform);	
 		kidAnimator = transform.GetComponentInChildren<Animator>();
 		InvokeRepeating ("IdleSound", 0, 6);
 		isIdle = true;
 	}
 
+	public void setBusy(bool busy){
+		isBusy = busy;
+	}
+	
+	public void playAngrySound(){
+		audio.clip = monster[Random.Range (0,monster.GetLength (0))];
+		audio.Play ();
+	}
 
 	void IdleSound(){
 		if (!isBusy) {
