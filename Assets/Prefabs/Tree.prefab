@@ -29,7 +29,7 @@ GameObject:
   - 212: {fileID: 21243678}
   - 95: {fileID: 9543678}
   m_Layer: 0
-  m_Name: Tree
+  m_Name: Graphics
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
