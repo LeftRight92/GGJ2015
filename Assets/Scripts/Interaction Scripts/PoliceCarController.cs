@@ -105,8 +105,8 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 			player.canControl = true;
 
 			//Instantiate Fireman
-			Instantiate (firemanPrefab, new Vector3 (12, -1.2f, 0), Quaternion.identity);
-			GameController.Get("fireman").GetComponentInChildren<SpriteRenderer>().sortingOrder = 3;
+			Instantiate (firemanPrefab, new Vector3 (12, -2.1f, 0), Quaternion.identity);
+
 
 			//Move Fireman in scene
 			//Is done in the Fireman script Start()
