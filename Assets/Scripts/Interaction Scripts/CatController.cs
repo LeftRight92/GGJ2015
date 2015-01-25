@@ -70,6 +70,8 @@ public class CatController : MonoBehaviour, InteractableObject {
 
 	IEnumerator catBuriedEvent () {
 
+
+		yield return new WaitForSeconds (2);
 		//Spawn Cat Ghost
 		Instantiate (catGhostPrefab, new Vector3 (2, -1.96f, 0), Quaternion.identity);
 		yield return null;
