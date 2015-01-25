@@ -112,11 +112,21 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 
 		// Crash the copter
 		helicopterObject = Instantiate (helicopter, new Vector3 (4f, 11f, 0), Quaternion.identity) as GameObject;
-		helicopterObject.transform.Rotate (new Vector3 (0, 0, 60));
 		Vector3 target = new Vector3 (-4.76f, -1.61f, 0);
 		helicopterObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 3;
 		helicopterObject.transform.localScale = new Vector3 (-1, 1, 1);
 
+		//Put the pilot into the copter
+
+		pilotObject = Instantiate (pilot, new Vector3(0,0,0), Quaternion.identity) as GameObject;
+		pilotObject.transform.parent = helicopterObject.transform;
+		pilotObject.transform.localPosition = new Vector3 (0, 0, 0);
+		pilotObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 2;
+
+
+		helicopterObject.transform.Rotate (new Vector3 (0, 0, 60));
+		
+		
 		HelicopterInteraction heliInteraction = helicopterObject.GetComponent<HelicopterInteraction> ();
 		heliInteraction.PlayHeliHit();
 
@@ -146,11 +156,12 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 		helicopterObject.tag = "Interactable";
 		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(helicopterObject.transform);
 
+		Vector3 pilotSpawn = new Vector3 (-4.16f, -1.61f, 0);		
 
-		// Spawn pilot
-		Vector3 pilotSpawn = new Vector3 (-4.16f, 1.61f, 0);
-		pilotObject = Instantiate (pilot, pilotSpawn, Quaternion.identity) as GameObject;
-		pilotObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 2;
+		//Move the pilot up in the hierarchy
+		pilotObject.transform.parent = helicopterObject.transform.parent;
+		pilotObject.transform.position = pilotSpawn;
+
 
 //		pilotObject.tag = "Interactable";
 //		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(pilotObject.transform);
