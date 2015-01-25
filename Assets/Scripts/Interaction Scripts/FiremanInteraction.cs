@@ -6,10 +6,12 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 	private Animator firemanAnimator;
 	private bool isBusy;
 	private GameObject waterObject;
+	private GameObject helicopterObject;
 
-	public AudioClip idle;
+	public AudioClip idle, freakingOut;	
 	public GameObject hoze;
 	public GameObject water;
+	public GameObject helicopter;
 
 	// Use this for initialization
 	void Start () {
@@ -83,6 +85,10 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 		}
 
 		// Play fireman crazy sounds
+		isBusy = true;
+		audio.clip = freakingOut;
+		audio.Play ();
+
 		// stretch the water 
 
 		Transform water_sprite = waterObject.transform.GetChild (0);
@@ -98,11 +104,25 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			//			water_sprite.transform.localScale = Vector3.MoveTowards(water.transform.localScale, new Vector3(2,1,1), Time.deltaTime);
 
 			yield return null;			
-		}
-		Debug.Log ("3");		
-		
+		}		
+
+		//TODO copter hit		
 
 		// Crash the copter
+		helicopterObject = Instantiate (helicopter, new Vector3 (4f, 11f, 0), Quaternion.identity) as GameObject;
+		helicopterObject.transform.Rotate (new Vector3 (60, 0, 0));
+		Vector3 target = new Vector3 (-7.3f, -2.8f, 0);
+
+		float speed = 1;
+
+		while (Mathf.Abs(helicopterObject.transform.position.y - target.y) > 0.5f &&
+		       Mathf.Abs (helicopterObject.transform.position.x - target.x) > 0.5f) {
+//			Debug.Log ("3");					
+			helicopterObject.transform.position = Vector3.MoveTowards(helicopterObject.transform.position, target, speed*Time.deltaTime);
+			speed += 0.5f;
+			yield return null;						
+		}
+
 		// Reduce the hoze
 		// Change them to background layer?
 		
