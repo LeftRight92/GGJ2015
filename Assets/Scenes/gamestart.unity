@@ -341,8 +341,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5df76d6c3ee767a4ab311169cadf02bd, type: 3}
   - {fileID: 8300000, guid: 9ea2b1dedd8936846897d7ae4b70fbc4, type: 3}
   attack: {fileID: 8300000, guid: 073cf975315bebd45a8f4bd23c7963b9, type: 3}
-  gravePrefab: {fileID: 174496, guid: f50ffb58ff900334ea3dcba72a5bd2f5, type: 2}
-  catGhostPrefab: {fileID: 101734, guid: 32f15caad42ccd548a54295b3d17c63e, type: 2}
+  gravePrefab: {fileID: 0}
+  catGhostPrefab: {fileID: 0}
 --- !u!95 &522046115
 Animator:
   serializedVersion: 3
@@ -604,6 +604,7 @@ GameObject:
   - 224: {fileID: 889564910}
   - 222: {fileID: 889564912}
   - 114: {fileID: 889564911}
+  - 114: {fileID: 889564913}
   m_Layer: 5
   m_Name: LeftClick
   m_TagString: Untagged
@@ -662,6 +663,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 889564909}
+--- !u!114 &889564913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889564909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154975bf0db99444c9a0f143bd673369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: .379999995
+  speed: .519999981
 --- !u!1 &916652565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154975bf0db99444c9a0f143bd673369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 3
+  offset: .400000006
+  speed: .5
 --- !u!1001 &1264044729
 Prefab:
   m_ObjectHideFlags: 0
@@ -1474,9 +1489,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1474411561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6330f50f695c47459a022bb75470fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 154975bf0db99444c9a0f143bd673369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: .419999987
+  speed: .479999989
 --- !u!1 &1487515780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,7 +1905,7 @@ GameObject:
   - 114: {fileID: 2031902945}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: TutCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

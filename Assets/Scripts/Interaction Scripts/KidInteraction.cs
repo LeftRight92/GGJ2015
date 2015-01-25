@@ -55,6 +55,7 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 
 	IEnumerator kidLiftedEvent()
 	{
+		Destroy (GameObject.FindWithTag("TutCanvas"));
 		isBusy = true;
 		isIdle = false;
 		GameController.Get ("Tree").tag = "Untagged";

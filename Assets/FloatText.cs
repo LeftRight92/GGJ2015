@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FloatText : MonoBehaviour {
 	private Vector3 locStart, locTarget;
-	public int offset;
+	public float offset, speed;
 	private bool goingUp = true;
 	// Use this for initialization
 	void Start () {
@@ -15,9 +15,11 @@ public class FloatText : MonoBehaviour {
 	void Update () {
 		if(goingUp){
 			//transform.Translate (Vector3.Lerp (transform.position, locTarget, Time.deltaTime), Space.World);
-			transform.Translate (Vector3.Lerp (new Vector3(0,0,0), new Vector3(0,offset,0), 0.5f));
+			transform.position = Vector3.Lerp (transform.position, locTarget, speed*Time.deltaTime);
+			if(transform.position.y >= locTarget.y - 0.2f) goingUp = false;
 		}else{
-		
+			transform.position = Vector3.Lerp (transform.position, locStart, speed*Time.deltaTime);
+			if(transform.position.y <= locStart.y + 0.2f) goingUp = true;
 		}
 	}
 }
