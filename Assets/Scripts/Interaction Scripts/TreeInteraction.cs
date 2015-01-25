@@ -18,13 +18,15 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 	}
 	
 	public bool onPush(bool right){
-		Debug.Log ("BOOP");
 		StartCoroutine("TreePushEvent");
 		return true;
 	}
 	
 	IEnumerator TreePushEvent(){
-		
+		transform.tag = "Untagged";
+		Transform kid = GameController.Get ("Kid");
+		kid.tag = "Untagged";
+		kid.GetComponentInChildren<Animator>().SetTrigger("Cry");
 		Transform cat = GameController.Get ("Cat");
 		cat.GetComponentInChildren<Animator>().SetBool("isScratching", true);
 		transform.GetComponentInChildren<Animator>().SetBool("Shaking", true);
@@ -34,6 +36,9 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 			yield return null;
 		}
 		cat.transform.rotation = Quaternion.identity;
+		cat.GetComponentInChildren<Animator>().SetBool("isScratching", false);
+		cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
+		cat.audio.mute = true;
 		yield return null;
 	}
 	
