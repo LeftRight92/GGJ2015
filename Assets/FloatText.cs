@@ -16,10 +16,10 @@ public class FloatText : MonoBehaviour {
 		if(goingUp){
 			//transform.Translate (Vector3.Lerp (transform.position, locTarget, Time.deltaTime), Space.World);
 			transform.position = Vector3.Lerp (transform.position, locTarget, speed*Time.deltaTime);
-			if(transform.position.y >= locTarget.y - 0.2f) goingUp = false;
+			if(transform.position.y >= locTarget.y - 0.1f) goingUp = false;
 		}else{
 			transform.position = Vector3.Lerp (transform.position, locStart, speed*Time.deltaTime);
-			if(transform.position.y <= locStart.y + 0.2f) goingUp = true;
+			if(transform.position.y <= locStart.y + 0.1f) goingUp = true;
 		}
 	}
 }
