@@ -281,6 +281,7 @@ GameObject:
   - 114: {fileID: 522046114}
   - 95: {fileID: 522046115}
   - 82: {fileID: 522046116}
+  - 61: {fileID: 522046117}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -413,6 +414,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!61 &522046117
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522046111}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 3, y: 3.21999979}
+  m_Center: {x: 0, y: .624523342}
 --- !u!1 &589961890
 GameObject:
   m_ObjectHideFlags: 0
