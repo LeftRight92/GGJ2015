@@ -12,7 +12,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: Push
     m_Type: 9
@@ -381,9 +381,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110271294}
-      second: []
-    data:
       first: {fileID: 0}
       second:
       - {fileID: 110112848}
@@ -412,6 +409,9 @@ StateMachine:
       second:
       - {fileID: 110179334}
       - {fileID: 110170778}
+    data:
+      first: {fileID: 110271294}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 564, y: 84, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

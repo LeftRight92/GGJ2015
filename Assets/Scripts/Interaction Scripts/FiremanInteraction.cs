@@ -120,7 +120,7 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 
 		pilotObject = Instantiate (pilot, new Vector3(0,0,0), Quaternion.identity) as GameObject;
 		pilotObject.transform.parent = helicopterObject.transform;
-		pilotObject.transform.localPosition = new Vector3 (0.33f, -0.52f, 0);
+		pilotObject.transform.localPosition = new Vector3 (0.33f, -0.7f, 0);
 		pilotObject.transform.Rotate (0, 0, 342);
 		pilotObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder = 3;
 
