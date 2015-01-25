@@ -52,8 +52,8 @@ TextureImporter:
         y: 19
         width: 786
         height: 1060
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .396843523, y: .0240524393}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2trees_sheet_1
       rect:
@@ -62,8 +62,8 @@ TextureImporter:
         y: 19
         width: 786
         height: 1060
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .396843433, y: .0261772051}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -48,12 +48,12 @@ TextureImporter:
     - name: brokentree sheet_0
       rect:
         serializedVersion: 2
-        x: 1111
-        y: 52
+        x: 1120
+        y: 50
         width: 1065
         height: 1048
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .792817593, y: .0614183135}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: brokentree sheet_1
       rect:
@@ -62,8 +62,8 @@ TextureImporter:
         y: 52
         width: 1065
         height: 1048
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .795496643, y: .0582941957}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
