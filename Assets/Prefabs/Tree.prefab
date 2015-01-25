@@ -68,9 +68,9 @@ BoxCollider2D:
   m_GameObject: {fileID: 143678}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 4.75}
+  m_Center: {x: .400000006, y: -2.20000005}
 --- !u!82 &8243678
 AudioSource:
   m_ObjectHideFlags: 1
