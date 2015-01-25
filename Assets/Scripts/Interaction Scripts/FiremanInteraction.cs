@@ -123,6 +123,16 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 			yield return null;						
 		}
 
+		while(water_sprite.transform.localScale.x > 0){				
+			//			Debug.Log ("Current scale: " + water_sprite.transform.localScale.ToString() );		
+			//			Debug.Log ("New scale: " + Vector3.Lerp(water.transform.localScale, new Vector3(2,1,1), Time.deltaTime * 10).ToString());  
+			
+			water_sprite.transform.localScale = new Vector3(water_sprite.transform.localScale.x - 0.1f, 1, 1);
+			//			water_sprite.transform.localScale = Vector3.MoveTowards(water.transform.localScale, new Vector3(2,1,1), Time.deltaTime);
+			
+			yield return null;			
+		}	
+
 		// Reduce the hoze
 		// Change them to background layer?
 		
