@@ -33,14 +33,14 @@ public class PlayerController : MonoBehaviour {
 					InteractableObject targetScript = (InteractableObject)target.GetComponent (typeof(InteractableObject));
 					// Execute on push command
 					if (targetScript.onPush (rightFacing)) {
-						audio.clip = pushTrue [Random.Range (0, pushTrue.GetLength (0))];
+						GetComponent<AudioSource>().clip = pushTrue [Random.Range (0, pushTrue.GetLength (0))];
 					} else {
-						audio.clip = pushFalse [Random.Range (0, pushFalse.GetLength (0))];
+						GetComponent<AudioSource>().clip = pushFalse [Random.Range (0, pushFalse.GetLength (0))];
 					}
-					audio.Play ();
+					GetComponent<AudioSource>().Play ();
 				} else {
-					audio.clip = pushFalse [Random.Range (0, pushFalse.GetLength (0))];
-					audio.Play ();
+					GetComponent<AudioSource>().clip = pushFalse [Random.Range (0, pushFalse.GetLength (0))];
+					GetComponent<AudioSource>().Play ();
 				}
 			}	
 			// On Right Mouse click
@@ -53,14 +53,14 @@ public class PlayerController : MonoBehaviour {
 							InteractableObject targetScript = (InteractableObject)target.GetComponent (typeof(InteractableObject));
 							// Execute on lift command
 							if (targetScript.onLift ()) {
-									audio.clip = liftTrue [Random.Range (0, liftTrue.GetLength (0))];
+									GetComponent<AudioSource>().clip = liftTrue [Random.Range (0, liftTrue.GetLength (0))];
 							} else {
-									audio.clip = liftFalse [Random.Range (0, liftFalse.GetLength (0))];
+									GetComponent<AudioSource>().clip = liftFalse [Random.Range (0, liftFalse.GetLength (0))];
 							}
-							audio.Play ();
+							GetComponent<AudioSource>().Play ();
 					} else {
-							audio.clip = liftFalse [Random.Range (0, liftFalse.GetLength (0))];
-							audio.Play ();
+							GetComponent<AudioSource>().clip = liftFalse [Random.Range (0, liftFalse.GetLength (0))];
+							GetComponent<AudioSource>().Play ();
 					}			
 			}
 			if (Input.GetButton ("Lift"))

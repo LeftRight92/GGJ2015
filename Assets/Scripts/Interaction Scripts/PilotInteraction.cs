@@ -14,8 +14,8 @@ public class PilotInteraction : MonoBehaviour, InteractableObject {
 
 	void IdleSound(){
 		if (isIdle) {
-			audio.clip = agony [Random.Range (0, agony.GetLength (0))];
-			audio.Play ();
+			GetComponent<AudioSource>().clip = agony [Random.Range (0, agony.GetLength (0))];
+			GetComponent<AudioSource>().Play ();
 		}
 	}
 	

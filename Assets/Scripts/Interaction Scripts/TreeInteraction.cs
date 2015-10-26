@@ -17,8 +17,8 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 	}
 
 	public void playCrash(){
-		audio.clip = crash [Random.Range(0, crash.GetLength (0))];
-		audio.Play ();
+		GetComponent<AudioSource>().clip = crash [Random.Range(0, crash.GetLength (0))];
+		GetComponent<AudioSource>().Play ();
 	}
 	
 	public bool onLift(){
@@ -54,7 +54,7 @@ public class TreeInteraction : MonoBehaviour, InteractableObject {
 		cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
 		cat.tag = "Interactable";
 		GameController.Get("Player").GetComponentInChildren<PushLiftCollider>().becomeInteractable(cat);
-		cat.audio.mute = true;
+		cat.GetComponent<AudioSource>().mute = true;
 		yield return null;
 	}
 	

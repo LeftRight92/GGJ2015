@@ -30,7 +30,7 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 
 	void IdleSound(){
 		if (!isBusy) {		
-			audio.Play ();		
+			GetComponent<AudioSource>().Play ();		
 		}
 	}
 
@@ -89,8 +89,8 @@ public class FiremanInteraction : MonoBehaviour, InteractableObject {
 
 		// Play fireman crazy sounds
 		isBusy = true;
-		audio.clip = freakingOut;
-		audio.Play ();
+		GetComponent<AudioSource>().clip = freakingOut;
+		GetComponent<AudioSource>().Play ();
 
 		// stretch the water 
 

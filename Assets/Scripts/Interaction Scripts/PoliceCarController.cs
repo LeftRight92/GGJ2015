@@ -9,15 +9,15 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 	public GameObject firemanPrefab;
 
 	public void playDriving(){
-		audio.clip = driving;
-		audio.loop = true;
-		audio.Play ();
+		GetComponent<AudioSource>().clip = driving;
+		GetComponent<AudioSource>().loop = true;
+		GetComponent<AudioSource>().Play ();
 	}
 
 	public void playStopping(){
-		audio.clip = stopping;
-		audio.loop = false;
-		audio.Play ();
+		GetComponent<AudioSource>().clip = stopping;
+		GetComponent<AudioSource>().loop = false;
+		GetComponent<AudioSource>().Play ();
 	}
 
 	// Use this for initialization
@@ -85,7 +85,7 @@ public class PoliceCarController : MonoBehaviour, InteractableObject {
 			GameController.Get ("Tree").GetComponentInChildren<Animator>().SetBool("Shaking", false);
 			cat.GetComponentInChildren<Animator>().SetBool("isScratching", false);
 			cat.GetComponentInChildren<Animator>().SetTrigger("Dead");
-			cat.audio.mute = true;
+			cat.GetComponent<AudioSource>().mute = true;
 			
 			//Change tree to fallen/burning
 			Transform tree = GameController.Get ("Tree");

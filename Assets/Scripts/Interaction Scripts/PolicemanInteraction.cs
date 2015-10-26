@@ -19,8 +19,8 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 
 	void IdleSound(){
 		if (!isBusy) {
-			audio.clip = idle[Random.Range (0,idle.GetLength (0))];
-			audio.Play ();
+			GetComponent<AudioSource>().clip = idle[Random.Range (0,idle.GetLength (0))];
+			GetComponent<AudioSource>().Play ();
 		}
 	}
 	// -6 -> 2.6
@@ -63,8 +63,8 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		
 		// Gets on the player and grunts
 		transform.Translate(new Vector3(0, 3.5f, 0));
-		audio.clip = lifted[Random.Range (0,lifted.GetLength (0))];
-		audio.Play ();
+		GetComponent<AudioSource>().clip = lifted[Random.Range (0,lifted.GetLength (0))];
+		GetComponent<AudioSource>().Play ();
 		yield return new WaitForSeconds(0.5F);
 
 
@@ -74,9 +74,9 @@ public class PolicemanInteraction : MonoBehaviour, InteractableObject {
 		cat.parent = transform;
 		cat.localPosition = new Vector3 (0.35f, 1.39f, 0);
 
-		audio.clip = happyIdle[Random.Range (0,happyIdle.GetLength (0))];
+		GetComponent<AudioSource>().clip = happyIdle[Random.Range (0,happyIdle.GetLength (0))];
 
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
 		yield return new WaitForSeconds(0.5F);
 
 		// goes down on the ground

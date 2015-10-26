@@ -31,7 +31,7 @@ public class PushLiftCollider : MonoBehaviour {
 	
 	public void becomeInteractable(Transform other){
 		if(other.tag == "Interactable"){
-			if(gameObject.collider2D.bounds.Intersects(other.collider2D.bounds)){
+			if(gameObject.GetComponent<Collider2D>().bounds.Intersects(other.GetComponent<Collider2D>().bounds)){
 				targets.Add (other.transform);
 			}
 		}

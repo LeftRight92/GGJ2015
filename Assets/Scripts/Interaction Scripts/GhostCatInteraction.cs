@@ -82,8 +82,8 @@ public class GhostCatInteraction : MonoBehaviour, InteractableObject {
 		}
 
 	void IdleSound(){
-			audio.clip = idle [Random.Range (0, idle.GetLength (0))];
-			audio.Play ();
+			GetComponent<AudioSource>().clip = idle [Random.Range (0, idle.GetLength (0))];
+			GetComponent<AudioSource>().Play ();
 	}
 
 }

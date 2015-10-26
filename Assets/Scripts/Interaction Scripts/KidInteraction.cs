@@ -29,18 +29,18 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	}
 
 	public void playAngrySound(){
-		audio.clip = monster[Random.Range (0,monster.GetLength (0))];
-		audio.Play ();
+		GetComponent<AudioSource>().clip = monster[Random.Range (0,monster.GetLength (0))];
+		GetComponent<AudioSource>().Play ();
 	}
 
 	void IdleSound(){
 		if (!isBusy) {
 						if (isIdle) {
-								audio.clip = idle [Random.Range (0, idle.GetLength (0))];
-								audio.Play ();	
+								GetComponent<AudioSource>().clip = idle [Random.Range (0, idle.GetLength (0))];
+								GetComponent<AudioSource>().Play ();	
 						} else {
-								audio.clip = hurt [Random.Range (0, hurt.GetLength (0))];
-								audio.Play ();
+								GetComponent<AudioSource>().clip = hurt [Random.Range (0, hurt.GetLength (0))];
+								GetComponent<AudioSource>().Play ();
 						}
 				}
 
@@ -52,8 +52,8 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 	}
 	
 	public bool onPush(bool facing){
-		audio.clip = pushed[Random.Range (0,pushed.GetLength (0))];
-		audio.Play ();
+		GetComponent<AudioSource>().clip = pushed[Random.Range (0,pushed.GetLength (0))];
+		GetComponent<AudioSource>().Play ();
 		return true;
 	}
 
@@ -71,17 +71,17 @@ public class KidInteraction : MonoBehaviour, InteractableObject {
 
 		player.canControl = false;
 		kidAnimator.SetTrigger ("Reach");
-		audio.clip = lifted[Random.Range (0,lifted.GetLength (0))];
-		audio.loop = false;
-		audio.Play ();
+		GetComponent<AudioSource>().clip = lifted[Random.Range (0,lifted.GetLength (0))];
+		GetComponent<AudioSource>().loop = false;
+		GetComponent<AudioSource>().Play ();
 		yield return new WaitForSeconds(1);
 
 		CatController catScript = cat.GetComponent<CatController> ();
 		catScript.setBusy (true);
 		catScript.playAttack ();
 		catAnimator.SetBool ("isScratching", true);
-		audio.clip = hurt[Random.Range (0,hurt.GetLength (0))];
-		audio.Play ();
+		GetComponent<AudioSource>().clip = hurt[Random.Range (0,hurt.GetLength (0))];
+		GetComponent<AudioSource>().Play ();
 		//Animations
 		yield return new WaitForSeconds(2);
 		catScript.setBusy (false);

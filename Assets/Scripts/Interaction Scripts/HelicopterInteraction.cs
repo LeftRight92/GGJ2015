@@ -11,13 +11,13 @@ public class HelicopterInteraction : MonoBehaviour, InteractableObject {
 	}
 
 	public void PlayHeliHit(){
-		audio.clip = heliHit;
-		audio.Play ();
+		GetComponent<AudioSource>().clip = heliHit;
+		GetComponent<AudioSource>().Play ();
 	}
 
 	public void PlayHeliCrash(){
-		audio.clip = heliCrash;
-		audio.Play ();
+		GetComponent<AudioSource>().clip = heliCrash;
+		GetComponent<AudioSource>().Play ();
 	}
 	
 	// Update is called once per frame

@@ -19,15 +19,15 @@ public class CatController : MonoBehaviour, InteractableObject {
 	}
 
 	public void playAttack(){
-		audio.clip = attack;
-		audio.Play ();
+		GetComponent<AudioSource>().clip = attack;
+		GetComponent<AudioSource>().Play ();
 	}
 	
 	void IdleSound(){
 
 		if (!isBusy) {
-			audio.clip = idle [Random.Range (0, idle.GetLength (0))];
-			audio.Play ();	
+			GetComponent<AudioSource>().clip = idle [Random.Range (0, idle.GetLength (0))];
+			GetComponent<AudioSource>().Play ();	
 		}
 		
 	}
